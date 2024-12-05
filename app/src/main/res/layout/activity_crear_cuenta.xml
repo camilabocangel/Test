@@ -32,7 +32,8 @@
             android:hint="@string/USUARIO"
             android:inputType="text"
             android:textSize="22sp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
             android:backgroundTint="@color/verdeClaro"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/crearCuentaText"
@@ -47,13 +48,14 @@
             android:hint="@string/EMAIlREGISTRO"
             android:inputType="textEmailAddress"
             android:textSize="22sp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
             android:backgroundTint="@color/verdeClaro"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/usuarioRegistro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="30dp">
         </EditText>
         <EditText
             android:id="@+id/contrasenaRegistro"
@@ -62,13 +64,14 @@
             android:hint="@string/CONTRASENA"
             android:inputType="textPassword"
             android:textSize="22sp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
             android:backgroundTint="@color/verdeClaro"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/emailRegistro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="30dp">
         </EditText>
         <EditText
             android:id="@+id/confirContrasenaRegistro"
@@ -77,13 +80,14 @@
             android:hint="@string/CONFIRCONTRASENA"
             android:inputType="textPassword"
             android:textSize="22sp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
             android:backgroundTint="@color/verdeClaro"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/contrasenaRegistro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="30dp">
         </EditText>
         <Button
             android:id="@+id/siguiente"

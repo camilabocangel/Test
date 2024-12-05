@@ -11,27 +11,28 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/holaLogin"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/HOLA"
-            android:textSize="50sp"
+            android:textSize="45sp"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="100dp"
-            android:textColor="@color/verde">
+            app:layout_constraintStart_toStartOf="@id/usuarioLogin"
+            android:textColor="@color/verde"
+            android:layout_marginTop="100dp">
         </TextView>
         <TextView
             android:id="@+id/bienvenidoLogin"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/holaLogin"
             android:text="@string/BIENVENIDO"
-            android:textSize="50sp"
+            android:textSize="45sp"
             android:fontFamily="@font/lato_bold"
-            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toStartOf="@id/holaLogin"
             android:textColor="@color/verde">
         </TextView>
         <EditText
@@ -41,10 +42,12 @@
             android:hint="@string/USUARIO"
             android:inputType="text"
             android:textSize="22sp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
             android:backgroundTint="@color/verde"
             android:fontFamily="@font/lato_regular"
-            app:layout_constraintStart_toStartOf="@id/bienvenidoLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bienvenidoLogin"
             android:layout_marginTop="80sp">
         </EditText>
@@ -55,10 +58,12 @@
             android:hint="@string/CONTRASENA"
             android:inputType="textPassword"
             android:textSize="22sp"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
             android:backgroundTint="@color/verde"
             android:fontFamily="@font/lato_regular"
-            app:layout_constraintStart_toStartOf="@id/bienvenidoLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/usuarioLogin"
             android:layout_marginTop="30dp">
         </EditText>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Debuggers</string>
+    <string name="app_name">Pulse</string>
     <string name="HOLA">HOLA</string>
     <string name="BIENVENIDO">BIENVENIDO!</string>
     <string name="USUARIO">Nombre de usuario</string>
@@ -11,7 +11,7 @@
     <string name="EMAIlREGISTRO">Correo electrónico</string>
     <string name="SIGUIENTE">Siguiente</string>
     <string name="INGRESARDATOS">INGRESA TUS DATOS</string>
-    <string name="EDAD">Edad</string>
-    <string name="ALTURA">Altura</string>
-    <string name="PESO">Peso</string>
+    <string name="FECHADENACIMIENTO">Fecha de nacimiento (DD/MM/AA)</string>
+    <string name="ALTURA">Altura (cm)</string>
+    <string name="PESO">Peso (kg)</string>
 </resources>
