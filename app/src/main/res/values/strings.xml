@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Debuggers</string>
+    <string name="HOLA">HOLA</string>
+    <string name="BIENVENIDO">BIENVENIDO!</string>
+    <string name="USUARIO">Nombre de usuario</string>
+    <string name="CONTRASENA">Contraseña</string>
+    <string name="CONFIRCONTRASENA">Confirmar contraseña</string>
+    <string name="LOGIN">Login</string>
+    <string name="NOTIENESCUENTA">¿No tienes una cuenta?</string>
+    <string name="CREARCUENTA">CREAR CUENTA</string>
+    <string name="EMAIlREGISTRO">Correo electrónico</string>
+    <string name="SIGUIENTE">Siguiente</string>
+    <string name="INGRESARDATOS">INGRESA TUS DATOS</string>
+    <string name="EDAD">Edad</string>
+    <string name="ALTURA">Altura</string>
+    <string name="PESO">Peso</string>
 </resources>
