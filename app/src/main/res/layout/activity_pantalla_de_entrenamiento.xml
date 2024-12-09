@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/mainEleccionMusculo"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ActivityEleccionMusculos">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/fondo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo">
+    <ImageView
+        android:id="@+id/botonAtrasEleccionEjercicio"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/flecha_atras"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tituloComienza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/COMIENZA"
+        android:textColor="@color/verde"
+        android:textSize="35sp"
+        android:fontFamily="@font/lato_regular"
+        app:layout_constraintTop_toBottomOf="@id/botonAtrasEleccionEjercicio"
+        app:layout_constraintStart_toStartOf="@id/botonAtrasEleccionEjercicio"
+        android:layout_marginTop="30dp">
+    </TextView>
+
+    <ScrollView
+        android:id="@+id/scrollEntrenamiento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloComienza"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewEjercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardCornerRadius="40dp"
+                android:backgroundTint="@color/verde"
+                android:background="@color/verde"
+                app:layout_constraintDimensionRatio="2:1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cuadroVerde"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/gifEjercicio"
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:background="@color/fondo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp">
+                    </ImageView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewPeso"
+                android:layout_width="270dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="@id/cardviewEjercicio"
+                app:layout_constraintEnd_toEndOf="@id/cardviewEjercicio"
+                app:layout_constraintTop_toBottomOf="@id/cardviewEjercicio"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="20dp"
+                android:backgroundTint="@color/verde"
+                android:background="@color/verde"
+                app:layout_constraintDimensionRatio="2:1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cuadroVerde2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/ejercicioEnPeso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CURLBARRA"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="@id/cuadroVerde2"
+                        app:layout_constraintTop_toTopOf="@id/cuadroVerde2">
+                    </TextView>
+                    <ImageView
+                        android:id="@+id/imagenPesa"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/fondo"
+                        app:layout_constraintTop_toBottomOf="@id/ejercicioEnPeso"
+                        app:layout_constraintStart_toStartOf="@id/cuadroVerde2"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp">
+                    </ImageView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/SIGUIENTE"
+        android:backgroundTint="@color/verde"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/fondo"
+        app:layout_constraintEnd_toEndOf="@id/fondo"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="20dp">
+    </Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

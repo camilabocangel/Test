@@ -29,5 +29,7 @@
     <string name="CURLCONCENTRADO">Curl concentrado</string>
     <string name="CURLINCLINADO">Curl inclinado</string>
     <string name="DOMINADASSUPINAS">Dominadas supinas</string>
-
+    <string name="COMIENZA">¡COMIENZA!</string>
+    <string name="FELICIDADES">¡FELICIDADES!</string>
+    <string name="FRASEFELICIDADES">¡Acabaste con éxito tu entrenamiento!</string>
 </resources>
