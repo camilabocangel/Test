@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityLogin"
+    tools:context=".ActivityCrearCuenta"
     android:background="@drawable/login_fondo">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +29,7 @@
             android:id="@+id/usuarioRegistro"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="@string/USUARIO"
+            android:hint="@string/Usuario"
             android:inputType="text"
             android:textSize="22sp"
             android:textColorHint="@color/blancoClaro"
@@ -90,10 +90,10 @@
             android:layout_marginTop="30dp">
         </EditText>
         <Button
-            android:id="@+id/siguiente"
+            android:id="@+id/registroCuenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/SIGUIENTE"
+            android:text="@string/registroCuenta"
             android:backgroundTint="@color/verde"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@id/confirContrasenaRegistro"

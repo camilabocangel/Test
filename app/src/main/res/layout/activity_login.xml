@@ -20,7 +20,7 @@
             android:textSize="45sp"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/usuarioLogin"
+            app:layout_constraintStart_toStartOf="@id/emailLogin"
             android:textColor="@color/verde"
             android:layout_marginTop="100dp">
         </TextView>
@@ -36,10 +36,10 @@
             android:textColor="@color/verde">
         </TextView>
         <EditText
-            android:id="@+id/usuarioLogin"
+            android:id="@+id/emailLogin"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:hint="@string/USUARIO"
+            android:hint="@string/EMAIL"
             android:inputType="text"
             android:textSize="22sp"
             android:textColorHint="@color/blancoClaro"
@@ -51,6 +51,7 @@
             app:layout_constraintTop_toBottomOf="@id/bienvenidoLogin"
             android:layout_marginTop="80sp">
         </EditText>
+
         <EditText
             android:id="@+id/contrasenaLogin"
             android:layout_width="350dp"
@@ -64,7 +65,7 @@
             android:fontFamily="@font/lato_regular"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/usuarioLogin"
+            app:layout_constraintTop_toBottomOf="@id/emailLogin"
             android:layout_marginTop="30dp">
         </EditText>
         <Button
