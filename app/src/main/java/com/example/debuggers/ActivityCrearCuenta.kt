@@ -33,8 +33,9 @@ class ActivityCrearCuenta : AppCompatActivity() {
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Espere un momento")
         progressDialog.setCanceledOnTouchOutside(false)
-        
+
         binding.registroCuenta.setOnClickListener{
+
             validarInformacion()
         }
     }
@@ -49,26 +50,34 @@ class ActivityCrearCuenta : AppCompatActivity() {
         password = binding.contrasenaRegistro.text.toString().trim()
         r_password = binding.confirContrasenaRegistro.text.toString().trim()
 
-        if(nombres.isEmpty()){
-            binding.usuarioRegistro.error = "Ingrese su nombre"
-            binding.usuarioRegistro.requestFocus()
-        }
-        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.emailRegistro.error = "Correo Invalido"
-            binding.emailRegistro.requestFocus()
-        }else if(email.isEmpty()){
-            binding.emailRegistro.error = "Ingrese Correo"
-            binding.emailRegistro.requestFocus()
-        }else if(password.isEmpty()){
-            binding.contrasenaRegistro.error = "Ingrese Contraseña"
-        }else if(r_password.isEmpty()){
-            binding.confirContrasenaRegistro.error = "Repita Contraseña"
-            binding.confirContrasenaRegistro.requestFocus()
-        }else if (password != r_password){
-            binding.confirContrasenaRegistro.error = "La constraseña no es la misma"
-            binding.confirContrasenaRegistro.requestFocus()
-        }else{
-            registrarUsuario()
+        when {
+            nombres.isEmpty() -> {
+                binding.usuarioRegistro.error = "Este campo es obligatorio"
+                return
+            }
+            email.isEmpty() -> {
+                binding.emailRegistro.error = "Este campo es obligatorio"
+                return
+            }
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                binding.emailRegistro.error = "Ingresa un email válido"
+                return
+            }
+            password.isEmpty() -> {
+                binding.contrasenaRegistro.error = "Este campo es obligatorio"
+                return
+            }
+            r_password.isEmpty() -> {
+                binding.confirContrasenaRegistro.error = "Confirma tu contraseña"
+                return
+            }
+            password != r_password -> {
+                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                return
+            }
+            else -> {
+                registrarUsuario()
+            }
         }
     }
 
