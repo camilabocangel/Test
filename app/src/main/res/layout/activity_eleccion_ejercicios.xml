@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@color/fondo">
         <ImageView
-            android:id="@+id/botonAtrasEleccionEjercicio"
+            android:id="@+id/botonAtrasAEleccionMusculo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/flecha_atras"
@@ -31,8 +31,8 @@
             android:textColor="@color/verde"
             android:textSize="35sp"
             android:fontFamily="@font/lato_regular"
-            app:layout_constraintTop_toBottomOf="@id/botonAtrasEleccionEjercicio"
-            app:layout_constraintStart_toStartOf="@id/botonAtrasEleccionEjercicio"
+            app:layout_constraintTop_toBottomOf="@id/botonAtrasAEleccionMusculo"
+            app:layout_constraintStart_toStartOf="@id/botonAtrasAEleccionMusculo"
             android:layout_marginTop="30dp">
         </TextView>
 
@@ -57,8 +57,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:cardCornerRadius="40dp"
-                    android:backgroundTint="@color/verde"
-                    android:background="@color/verde"
+                    app:cardBackgroundColor="@color/verde"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="2:1">
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cuadroVerde"
@@ -68,7 +71,7 @@
                             android:id="@+id/imagenEjercicio"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
-                            android:background="@color/fondo"
+                            android:background="@drawable/image_view_rounded"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +85,7 @@
                             app:layout_constraintEnd_toStartOf="@id/imagenEjercicio"
                             android:text="@string/CURLBARRA"
                             android:textColor="@color/fondo"
+                            android:theme="@style/checkboxColoreado"
                             android:fontFamily="@font/lato_bold"
                             android:textSize="25sp"
                             android:layoutDirection="rtl"
@@ -93,6 +97,7 @@
         </ScrollView>
 
         <Button
+            android:id="@+id/siguienteAEntrenamiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"

@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.Debuggers" parent="Base.Theme.Debuggers" />
+    <style name="checkboxColoreado" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/verdeClaro</item>
+        <item name="android:textColorSecondary">@color/fondo</item>
+    </style>
+    <style name="checkboxColoreadoDos" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/verde</item>
+        <item name="android:textColorSecondary">@color/fondo</item>
+    </style>
 </resources>

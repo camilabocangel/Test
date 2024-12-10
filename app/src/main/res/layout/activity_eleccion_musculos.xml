@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/fondo">
         <ImageView
-            android:id="@+id/botonAtrasEleccionMusculo"
+            android:id="@+id/botonAtrasARegistro"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/flecha_atras"
@@ -30,8 +30,8 @@
             android:textColor="@color/verde"
             android:textSize="35sp"
             android:fontFamily="@font/lato_regular"
-            app:layout_constraintTop_toBottomOf="@id/botonAtrasEleccionMusculo"
-            app:layout_constraintStart_toStartOf="@id/botonAtrasEleccionMusculo"
+            app:layout_constraintTop_toBottomOf="@id/botonAtrasARegistro"
+            app:layout_constraintStart_toStartOf="@id/botonAtrasARegistro"
             android:layout_marginTop="30dp">
         </TextView>
 
@@ -60,6 +60,7 @@
                     android:layoutDirection="rtl"
                     android:paddingRight="100dp"
                     android:text="@string/BICEPS"
+                    android:theme="@style/checkboxColoreadoDos"
                     android:textColor="@color/white"
                     android:textSize="25dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -74,6 +75,7 @@
                     android:layoutDirection="rtl"
                     android:paddingRight="100dp"
                     android:text="@string/TRICEPS"
+                    android:theme="@style/checkboxColoreadoDos"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
@@ -86,6 +88,7 @@
                     android:layoutDirection="rtl"
                     android:paddingRight="100dp"
                     android:text="@string/PECHO"
+                    android:theme="@style/checkboxColoreadoDos"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
@@ -98,6 +101,7 @@
                     android:layoutDirection="rtl"
                     android:paddingRight="100dp"
                     android:text="@string/ESPALDA"
+                    android:theme="@style/checkboxColoreadoDos"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
@@ -110,6 +114,7 @@
                     android:layoutDirection="rtl"
                     android:paddingRight="100dp"
                     android:text="@string/FEMORAL"
+                    android:theme="@style/checkboxColoreadoDos"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
@@ -122,6 +127,7 @@
                     android:layoutDirection="rtl"
                     android:paddingRight="100dp"
                     android:text="@string/CUADRICEPS"
+                    android:theme="@style/checkboxColoreadoDos"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
@@ -130,6 +136,7 @@
         </ScrollView>
 
         <Button
+            android:id="@+id/siguienteAElecEjercicios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
