@@ -35,8 +35,9 @@ class ActivityLogin : AppCompatActivity() {
 
         //LoginVerificacionDeUsuario
         binding.botonLogin.setOnClickListener{
-            validarInformacion()
+           validarInformacion()
         }
+
 
         binding.crearCuenta.setOnClickListener{
             startActivity(Intent(applicationContext,ActivityCrearCuenta::class.java))
@@ -45,24 +46,25 @@ class ActivityLogin : AppCompatActivity() {
 
     private var email = ""
     private var password = ""
-    private fun validarInformacion() {
+    private fun validarInformacion(){
         email = binding.emailLogin.text.toString().trim()
         password = binding.contrasenaLogin.text.toString().trim()
 
-        if(email.isEmpty()){
-            binding.emailLogin.error = "Ingrese su correo electronico"
-            binding.emailLogin.requestFocus()
-        }
-        else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.emailLogin.error = "Correo no valido"
-            binding.emailLogin.requestFocus()
-        }
-        else if (password.isEmpty()){
-            binding.contrasenaLogin.error = "Ingrese la contraseña"
-            binding.contrasenaLogin.requestFocus()
-        }
-        else {
-            logearUsuario()
+        when{
+            email.isEmpty()->{
+                binding.emailLogin.error = "Este campo es obligatorio"
+                return
+            }
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() ->{
+                binding.emailLogin.error = "Ingresa un email valido"
+                return
+            }
+            password.isEmpty()->{
+                binding.contrasenaLogin.error = "Este campo es obligatorio"
+                return
+            }else->{
+                logearUsuario()
+            }
         }
     }
 
