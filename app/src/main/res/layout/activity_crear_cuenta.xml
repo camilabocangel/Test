@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        tools:context=".ActivityCrearCuenta"
+    tools:context=".ActivityCrearCuenta"
     android:background="@drawable/fondo_login">
 
     <androidx.constraintlayout.widget.ConstraintLayout
