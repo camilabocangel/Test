@@ -13,13 +13,7 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEleccionEjerciciosBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        setContentView(binding.root)
         binding.siguienteAEntrenamiento.setOnClickListener {
             val intentEntrenamiento = Intent (this, ActivityPantallaDeEntrenamiento::class.java)
             startActivity(intentEntrenamiento)
