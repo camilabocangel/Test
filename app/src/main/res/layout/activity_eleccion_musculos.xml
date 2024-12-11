@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainEleccionMusculo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityEleccionMusculos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fondo">
+        <ImageView
+            android:id="@+id/botonAtrasARegistro"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/flecha_atras"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="15dp">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tituloEleccionMusculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/QUEENTRENARASMUSCULO"
+            android:textColor="@color/verde"
+            android:textSize="35sp"
+            android:fontFamily="@font/lato_regular"
+            app:layout_constraintTop_toBottomOf="@id/botonAtrasARegistro"
+            app:layout_constraintStart_toStartOf="@id/botonAtrasARegistro"
+            android:layout_marginTop="30dp">
+        </TextView>
+
+        <ScrollView
+            android:id="@+id/scrollMusculos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkbox_biceps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="200dp"
+                    android:layoutDirection="rtl"
+                    android:paddingRight="100dp"
+                    android:text="@string/BICEPS"
+                    android:theme="@style/checkboxColoreadoDos"
+                    android:textColor="@color/white"
+                    android:textSize="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_triceps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:paddingRight="100dp"
+                    android:text="@string/TRICEPS"
+                    android:theme="@style/checkboxColoreadoDos"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_biceps"
+                    android:layout_marginTop="10dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_pecho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:paddingRight="100dp"
+                    android:text="@string/PECHO"
+                    android:theme="@style/checkboxColoreadoDos"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_triceps"
+                    android:layout_marginTop="10dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_espalda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:paddingRight="100dp"
+                    android:text="@string/ESPALDA"
+                    android:theme="@style/checkboxColoreadoDos"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_pecho"
+                    android:layout_marginTop="10dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_femoral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:paddingRight="100dp"
+                    android:text="@string/FEMORAL"
+                    android:theme="@style/checkboxColoreadoDos"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_espalda"
+                    android:layout_marginTop="10dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_cuadriceps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:paddingRight="100dp"
+                    android:text="@string/CUADRICEPS"
+                    android:theme="@style/checkboxColoreadoDos"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_femoral"
+                    android:layout_marginTop="10dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/siguienteAElecEjercicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/SIGUIENTE"
+            android:backgroundTint="@color/verde"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/scrollMusculos"
+            app:layout_constraintEnd_toEndOf="@id/tituloEleccionMusculo"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp">
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

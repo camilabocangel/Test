@@ -15,6 +15,18 @@
         android:theme="@style/Theme.Debuggers"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityFelicidades"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityPantallaDeEntrenamiento"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityEleccionEjercicios"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityEleccionMusculos"
+            android:exported="false" />
+        <activity
             android:name=".ActivityRegistrarDatos"
             android:exported="false" />
         <activity

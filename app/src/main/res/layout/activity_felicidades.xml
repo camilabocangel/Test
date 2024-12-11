@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityFelicidades">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_felicidades">
+        <TextView
+            android:id="@+id/pantallaFelicidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/FELICIDADES"
+            android:textColor="@color/fondo"
+            android:textSize="50sp"
+            android:fontFamily="@font/lato_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="100sp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/FRASEFELICIDADES"
+            android:textSize="38sp"
+            android:textColor="@color/fondo"
+            android:fontFamily="@font/lato_bold"
+            app:layout_constraintTop_toBottomOf="@id/pantallaFelicidades"
+            app:layout_constraintStart_toStartOf="@id/pantallaFelicidades"
+            app:layout_constraintEnd_toEndOf="@id/pantallaFelicidades"
+            android:layout_marginTop="350sp"
+            android:gravity="center">
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
