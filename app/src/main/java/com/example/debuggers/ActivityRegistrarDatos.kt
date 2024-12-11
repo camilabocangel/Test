@@ -18,12 +18,6 @@ class ActivityRegistrarDatos : AppCompatActivity() {
         binding = ActivityRegistrarDatosBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        binding = ActivityRegistrarDatosBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         binding.siguienteAElecMusculos.setOnClickListener {
             val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
