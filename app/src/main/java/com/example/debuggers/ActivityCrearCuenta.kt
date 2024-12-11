@@ -34,7 +34,7 @@ class ActivityCrearCuenta : AppCompatActivity() {
         progressDialog.setTitle("Espere un momento")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        binding.siguienteARegistroCuenta.setOnClickListener{
+        binding.siguienteARegistro.setOnClickListener{
 
             validarInformacion()
         }
