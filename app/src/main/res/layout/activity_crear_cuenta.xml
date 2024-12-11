@@ -6,8 +6,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityLogin"
-    android:background="@drawable/login_fondo">
+        tools:context=".ActivityCrearCuenta"
+    android:background="@drawable/fondo_login">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:textSize="22sp"
             android:textColorHint="@color/blancoClaro"
             android:textColor="@color/white"
-            android:backgroundTint="@color/verdeClaro"
+            android:backgroundTint="@color/verde"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/crearCuentaText"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
             android:textSize="22sp"
             android:textColorHint="@color/blancoClaro"
             android:textColor="@color/white"
-            android:backgroundTint="@color/verdeClaro"
+            android:backgroundTint="@color/verde"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/usuarioRegistro"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +66,7 @@
             android:textSize="22sp"
             android:textColorHint="@color/blancoClaro"
             android:textColor="@color/white"
-            android:backgroundTint="@color/verdeClaro"
+            android:backgroundTint="@color/verde"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/emailRegistro"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
             android:textSize="22sp"
             android:textColorHint="@color/blancoClaro"
             android:textColor="@color/white"
-            android:backgroundTint="@color/verdeClaro"
+            android:backgroundTint="@color/verde"
             android:fontFamily="@font/lato_regular"
             app:layout_constraintTop_toBottomOf="@id/contrasenaRegistro"
             app:layout_constraintStart_toStartOf="parent"

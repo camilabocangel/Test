@@ -50,7 +50,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <CheckBox
                     android:id="@+id/checkbox_biceps"
@@ -79,7 +79,8 @@
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_biceps" />
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_biceps"
+                    android:layout_marginTop="10dp"/>
 
                 <CheckBox
                     android:id="@+id/checkbox_pecho"
@@ -92,7 +93,8 @@
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_triceps" />
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_triceps"
+                    android:layout_marginTop="10dp"/>
 
                 <CheckBox
                     android:id="@+id/checkbox_espalda"
@@ -105,7 +107,8 @@
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_pecho" />
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_pecho"
+                    android:layout_marginTop="10dp"/>
 
                 <CheckBox
                     android:id="@+id/checkbox_femoral"
@@ -118,7 +121,8 @@
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_espalda" />
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_espalda"
+                    android:layout_marginTop="10dp"/>
 
                 <CheckBox
                     android:id="@+id/checkbox_cuadriceps"
@@ -131,7 +135,8 @@
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_femoral" />
+                    app:layout_constraintTop_toBottomOf="@id/checkbox_femoral"
+                    android:layout_marginTop="10dp"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
