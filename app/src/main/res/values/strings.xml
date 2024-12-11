@@ -2,7 +2,9 @@
     <string name="app_name">Pulse</string>
     <string name="HOLA">HOLA</string>
     <string name="BIENVENIDO">BIENVENIDO!</string>
-    <string name="Usuario">Nombres</string>
+    <string name="USUARIO">Nombres</string>
+    <string name="EDADUSUARIO">Edad</string>
+    <string name="PESOUSUARIO">Peso</string>
     <string name="EMAIL">Email</string>
     <string name="CONTRASENA">Contraseña</string>
     <string name="CONFIRCONTRASENA">Confirmar contraseña</string>
