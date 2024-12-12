@@ -19,9 +19,9 @@ class ActivityRegistrarDatos : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        binding.siguienteAElecMusculos.setOnClickListener {
-            val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
-            startActivity(intentEleccionMusculos)
+        binding.siguienteAPantallaInicial.setOnClickListener {
+            val intentPantallaInicial = Intent (applicationContext, ActivityPantallaInicio::class.java)
+            startActivity(intentPantallaInicial)
         }
     }
 }

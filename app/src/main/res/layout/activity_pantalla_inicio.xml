@@ -144,19 +144,19 @@
         </HorizontalScrollView>
         <androidx.cardview.widget.CardView
             android:id="@+id/datosCuriososCardview"
-            android:layout_width="350dp"
+            android:layout_width="wrap_content"
             android:layout_height="80dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="8dp"
             app:layout_constraintTop_toBottomOf="@id/horizontalScrollPantallaInicio"
             app:layout_constraintStart_toStartOf="@id/comienzaPantallaInicio">
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/gradient3">
                 <TextView
                     android:id="@+id/datoCurioso"
-                    android:layout_width="300dp"
+                    android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:text="@string/DATOCURIOSO"
                     android:textSize="15sp"
@@ -164,7 +164,9 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp">
                 </TextView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -176,7 +178,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintTop_toBottomOf="@id/datosCuriososCardview"
             app:layout_constraintStart_toStartOf="@id/datosCuriososCardview"
-            android:layout_marginStart="25dp"
+
             android:layout_marginTop="30dp">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -212,8 +214,7 @@
             app:cardCornerRadius="20dp"
             app:layout_constraintTop_toBottomOf="@id/datosCuriososCardview"
             app:layout_constraintEnd_toEndOf="@id/datosCuriososCardview"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="25dp">
+            android:layout_marginTop="30dp">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
