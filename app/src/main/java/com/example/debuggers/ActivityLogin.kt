@@ -75,7 +75,7 @@ class ActivityLogin : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this, ActivityRegistrarDatos::class.java))
+                startActivity(Intent(this, ActivityPantallaInicio::class.java))
                 finishAffinity()
             }
             .addOnFailureListener {e->
