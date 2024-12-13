@@ -6,9 +6,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserPerfil"
+    tools:context=".ActivityUserPerfil"
     android:padding="20dp"
-    android:background="@drawable/fondoPerfil">
+    android:background="@drawable/fondo_perfil">
 
     <TextView
         android:id="@+id/txt_perfil"
@@ -67,53 +67,45 @@
         app:layout_constraintTop_toBottomOf="@id/txt_edad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="10dp"/>
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/btn_editar"
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:text="Editar"
+        android:text="@string/btn_edtar_usuarioPerfil"
         android:textSize="20dp"
+        android:textColor="@color/black"
         android:backgroundTint="@color/verde"
         app:layout_constraintTop_toBottomOf="@+id/txt_peso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/btn_editar"
+    <Button
+        android:id="@+id/btn_historial"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:text="@string/btn_historial_usuarioPerfil"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/verde"
+        app:layout_constraintTop_toBottomOf="@+id/btn_editar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintMarginTop="100dp">
+        android:layout_marginTop="20dp"/>
 
-        <ImageButton
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_image_grafics"
-            android:background="@null"
-            android:layout_margin="10dp"
-            android:contentDescription="Gráfico"/>
-
-        <ImageButton
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_image_information"
-            android:background="@null"
-            android:layout_margin="10dp"
-            android:contentDescription="Documento"/>
-
-        <ImageButton
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/ic_image_camera"
-            android:background="@null"
-            android:layout_margin="10dp"
-            android:contentDescription="Imagen"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn_cerrar_sesion"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:text="@string/btn_cerrarsesion_usuarioPerfil"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/verde"
+        app:layout_constraintTop_toBottomOf="@+id/btn_historial"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
