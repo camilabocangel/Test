@@ -5,33 +5,23 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.debuggers.adapters.PantallaDeEntrenamientoAdapter.PantallaDeEntrenamientoAdapter
 import com.example.debuggers.databinding.ActivityPantallaDeEntrenamientoBinding
+import com.example.debuggers.dataclasses.ejercicios
 
 
 class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
     private lateinit var binding: ActivityPantallaDeEntrenamientoBinding
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var entrenamientoAdapter: EntrenamientoAdapter
+
+    private val pantallaDeEntrenamientoAdapter by lazy { PantallaDeEntrenamientoAdapter() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPantallaDeEntrenamientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
-        val entrenamientoList = arrayListOf<carruselModel>()
-        entrenamientoList.add(carruselModel(R.drawable.chica_pesa, "chicaPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chico_pesa, "chicoPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chica_pesa, "chicaPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chico_pesa, "chicoPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chica_pesa, "chicaPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chico_pesa, "chicoPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chica_pesa, "chicaPesa"))
-        entrenamientoList.add(carruselModel(R.drawable.chico_pesa, "chicoPesa"))
+        setUpRecyclewViewEntrenamiento()
 
 
-        entrenamientoAdapter = EntrenamientoAdapter(entrenamientoList)
-        recyclerView.adapter = entrenamientoAdapter
 
         binding.siguienteAFelicidades.setOnClickListener {
             val intentFelicidades = Intent (this, ActivityFelicidades::class.java)
@@ -40,6 +30,41 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
         binding.cancelarEntrenamiento.setOnClickListener {
             val intentAtrasEjercicio = Intent (this, ActivityEleccionEjercicios::class.java)
             startActivity(intentAtrasEjercicio)
+        }
+    }
+    fun setUpRecyclewViewEntrenamiento(){
+        val listaDatos = mutableListOf(
+            ejercicios(
+                nombreEj = "biceps",
+                imagen = R.drawable.pesita
+            ),
+            ejercicios(
+                nombreEj = "biceps",
+                imagen = R.drawable.pesita
+            ),
+            ejercicios(
+                nombreEj = "biceps",
+                imagen = R.drawable.pesita
+            ),
+            ejercicios(
+                nombreEj = "biceps",
+                imagen = R.drawable.pesita
+            ),
+            ejercicios(
+                nombreEj = "biceps",
+                imagen = R.drawable.pesita
+            ),
+            ejercicios(
+                nombreEj = "biceps",
+                imagen = R.drawable.pesita
+            )
+        )
+        pantallaDeEntrenamientoAdapter.addDataToList(listaDatos)
+
+        binding.recyclerEntrenamiento.apply {
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = pantallaDeEntrenamientoAdapter
         }
     }
 }
