@@ -113,6 +113,7 @@ class ActivityCrearCuenta : AppCompatActivity() {
         datosUsuario["email"] = "$emailU"
         datosUsuario["proveedor"] = "Email"
         datosUsuario["estado"] = "Online"
+        datosUsuario["imagen"] = ""
 
         val reference = FirebaseDatabase.getInstance().getReference("Usuarios")
         reference.child(uidU!!)

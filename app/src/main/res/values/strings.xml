@@ -3,8 +3,9 @@
     <string name="HOLA">HOLA</string>
     <string name="BIENVENIDO">BIENVENIDO!</string>
     <string name="USUARIO">Nombres</string>
+    <string name="tv_nombres"> -- </string>
     <string name="EDADUSUARIO">Edad</string>
-    <string name="btn_edtar_usuarioPerfil">Editar</string>
+    <string name="btn_ActualizarInfo">Editar</string>
     <string name="btn_historial_usuarioPerfil">Historial</string>
     <string name="btn_cerrarsesion_usuarioPerfil">Cerrar Sesion</string>
     <string name="EMAIL">Email</string>
@@ -19,8 +20,10 @@
     <string name="SIGUIENTE">Siguiente</string>
     <string name="INGRESARDATOS">INGRESA TUS DATOS</string>
     <string name="FECHADENACIMIENTO">Fecha de nacimiento (DD/MM/AA)</string>
-    <string name="ALTURA">Altura (cm)</string>
+    <string name="ALTURA">Altura (m)</string>
+    <string name="tv_altura"> -- </string>
     <string name="PESO">Peso (kg)</string>
+    <string name="tv_peso"> -- </string>
     <string name="QUEENTRENARASMUSCULO">¿QUÉ ENTRENARÁS HOY?</string>
     <string name="BICEPS">Biceps</string>
     <string name="TRICEPS">Triceps</string>
@@ -48,4 +51,8 @@
     <string name="DATOCURIOSO">Entrenar fuerza acelera tu metabolismo hasta 72 horas después</string>
     <string name="PERFILPANTALLAINICIO">PERFIL</string>
     <string name="HISTORIAL">HISTORIAL</string>
+
+    <string name="Txt_titulo_edit">Editar informacion</string>
+    <string name="btn_Actualizar">Actualizar</string>
+
 </resources>
