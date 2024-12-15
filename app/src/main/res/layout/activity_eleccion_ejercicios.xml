@@ -7,103 +7,77 @@
     android:layout_height="match_parent"
     tools:context=".ActivityEleccionEjercicios">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fondo"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/fondo">
-        <ImageView
-            android:id="@+id/botonAtrasAEleccionMusculo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/flecha_atras"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="15dp">
-        </ImageView>
-
-        <TextView
-            android:id="@+id/tituloEleccionMusculo"
-            android:layout_width="wrap_content"
+        android:background="@color/fondo"
+        android:weightSum="3"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ELECCIONEJERCICIOS"
-            android:textColor="@color/verde"
-            android:textSize="35sp"
-            android:fontFamily="@font/lato_regular"
-            app:layout_constraintTop_toBottomOf="@id/botonAtrasAEleccionMusculo"
-            app:layout_constraintStart_toStartOf="@id/botonAtrasAEleccionMusculo"
-            android:layout_marginTop="30dp">
-        </TextView>
-
-        <ScrollView
-            android:id="@+id/scrollMusculos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
-            app:layout_constraintVertical_bias="0.0">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardviewEjercicio"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:cardCornerRadius="40dp"
-                app:cardBackgroundColor="@color/verde"
+            android:layout_marginBottom="30dp">
+            <ImageView
+                android:id="@+id/botonAtrasAEleccionMusculo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/flecha_atras"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="2:1">
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cuadroVerde"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp">
-                    <ImageView
-                        android:id="@+id/imagenEjercicio"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:background="@drawable/image_view_rounded"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginStart="10dp">
-                    </ImageView>
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="@id/cuadroVerde"
-                        app:layout_constraintBottom_toBottomOf="@id/cuadroVerde"
-                        app:layout_constraintEnd_toStartOf="@id/imagenEjercicio"
-                        android:text="@string/CURLBARRA"
-                        android:textColor="@color/fondo"
-                        android:theme="@style/checkboxColoreado"
-                        android:fontFamily="@font/lato_bold"
-                        android:textSize="25sp"
-                        android:layoutDirection="rtl"
-                        android:layout_marginEnd="10dp">
-                    </CheckBox>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-        </ScrollView>
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="15dp" />
 
-        <Button
-            android:id="@+id/siguienteAEntrenamiento"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tituloEleccionMusculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ELECCIONEJERCICIOS"
+                android:textColor="@color/verde"
+                android:textSize="35sp"
+                android:fontFamily="@font/lato_regular"
+                app:layout_constraintTop_toBottomOf="@id/botonAtrasAEleccionMusculo"
+                app:layout_constraintStart_toStartOf="@id/botonAtrasAEleccionMusculo"
+                android:layout_marginTop="30dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="@string/SIGUIENTE"
-            android:backgroundTint="@color/verde"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/fondo"
-            app:layout_constraintEnd_toEndOf="@id/fondo"
-            android:layout_marginBottom="50dp"
-            android:layout_marginEnd="20dp">
-        </Button>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_weight="1">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="50dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="50dp"
+                        tools:listitem="@layout/item_ejercicios" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+            <Button
+                android:id="@+id/siguienteAEntrenamiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/SIGUIENTE"
+                android:backgroundTint="@color/verde"
+                android:textColor="@color/black"
+                android:layout_marginBottom="500dp" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
