@@ -4,8 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.cardview.widget.CardView
 import com.example.debuggers.databinding.ActivityPantallaInicioBinding
 
 class ActivityPantallaInicio : AppCompatActivity() {
@@ -18,7 +17,9 @@ class ActivityPantallaInicio : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        binding.cardviewPersonalizaRutina.setOnClickListener {
+        val cardView = findViewById<CardView>(R.id.cardviewPersonalizaRutina)
+
+        cardView.setOnClickListener {
             val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
             startActivity(intentEleccionMusculos)
         }

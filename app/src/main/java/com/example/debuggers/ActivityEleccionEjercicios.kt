@@ -13,7 +13,6 @@ import com.example.debuggers.dataclasses.ejercicios
 import com.example.debuggers.dataclasses.ejerciciosimagen
 
 class ActivityEleccionEjercicios : AppCompatActivity() {
-
     private lateinit var binding: ActivityEleccionEjerciciosBinding
     private val EleccionEjerciciosAdapter by lazy { EleccionEjerciciosAdapter () }
 
@@ -23,6 +22,7 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
         setContentView(binding.root)
         setUpRecyclewViewEjercicios()
 
+        val selectedItems = intent.getIntArrayExtra("musculosSeleccionados")
         binding.siguienteAEntrenamiento.setOnClickListener {
             val intentEntrenamiento = Intent (this, ActivityPantallaDeEntrenamiento::class.java)
             startActivity(intentEntrenamiento)
