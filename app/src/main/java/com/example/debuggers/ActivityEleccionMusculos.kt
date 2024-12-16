@@ -29,7 +29,7 @@ class ActivityEleccionMusculos : AppCompatActivity() {
             startActivity(intentEleccionEjercicios)
         }
         binding.botonAtrasARegistro.setOnClickListener {
-            val intentAtrasARegistro = Intent (this, ActivityRegistrarDatos::class.java)
+            val intentAtrasARegistro = Intent (this, ActivityPantallaInicio::class.java)
             startActivity(intentAtrasARegistro)
         }
         helper = DatabaseHelper.getInstance(this)

@@ -24,22 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="130dp">
         </TextView>
-        <EditText
-            android:id="@+id/edadRegistro"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/FECHADENACIMIENTO"
-            android:inputType="date"
-            android:textSize="22sp"
-            android:textColorHint="@color/blancoClaro"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/verdeClaro"
-            android:fontFamily="@font/lato_regular"
-            app:layout_constraintTop_toBottomOf="@id/ingresaTusDatos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="100sp">
-        </EditText>
+
         <EditText
             android:id="@+id/alturaRegistro"
             android:layout_width="350dp"
@@ -51,7 +36,7 @@
             android:textColor="@color/white"
             android:backgroundTint="@color/verdeClaro"
             android:fontFamily="@font/lato_regular"
-            app:layout_constraintTop_toBottomOf="@id/edadRegistro"
+            app:layout_constraintTop_toBottomOf="@id/ingresaTusDatos"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="30sp">
@@ -74,7 +59,7 @@
         </EditText>
 
         <Button
-            android:id="@+id/siguienteAPantallaInicial"
+            android:id="@+id/siguienteAElecMusculos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/SIGUIENTE"

@@ -22,6 +22,8 @@ class ActivityLogin : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+
+
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Espere porfavor")
         progressDialog.setCanceledOnTouchOutside(false)
@@ -36,6 +38,8 @@ class ActivityLogin : AppCompatActivity() {
             startActivity(Intent(applicationContext,ActivityCrearCuenta::class.java))
         }
     }
+
+
 
     private var email = ""
     private var password = ""

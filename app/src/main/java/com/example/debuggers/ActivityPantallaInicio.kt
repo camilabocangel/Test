@@ -23,5 +23,10 @@ class ActivityPantallaInicio : AppCompatActivity() {
             val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
             startActivity(intentEleccionMusculos)
         }
+
+        binding.iconoPerfilPantallaInicio.setOnClickListener {
+            val intentPerfilUsuario = Intent (this, ActivityUserPerfil::class.java)
+            startActivity(intentPerfilUsuario)
+        }
     }
 }
