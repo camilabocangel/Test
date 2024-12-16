@@ -79,7 +79,7 @@
                     android:id="@+id/imagenPesa"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/image_view_rounded"
+                    android:background="@drawable/pesita"
                     app:layout_constraintTop_toTopOf="@id/cuadroVerde2"
                     app:layout_constraintStart_toStartOf="@id/cuadroVerde2"
                     app:layout_constraintBottom_toBottomOf="@id/cuadroVerde2"
