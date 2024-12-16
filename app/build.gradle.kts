@@ -42,9 +42,9 @@ android {
 
 dependencies {
 
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation("com.google.code.gson:gson2.11.0")
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
@@ -53,8 +53,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.google.firebase:firebase-storage")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
