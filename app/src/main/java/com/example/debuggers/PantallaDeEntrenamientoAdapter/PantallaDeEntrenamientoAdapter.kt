@@ -39,7 +39,6 @@ class PantallaDeEntrenamientoAdapter :
 
 
             binding.ejercicioEnPeso.text = data.nombreEj
-            binding.imagenPesa.setImageResource(data.imagen)
 
 
         }

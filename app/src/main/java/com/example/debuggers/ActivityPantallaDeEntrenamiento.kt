@@ -63,7 +63,7 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
 
         binding.recyclerEntrenamiento.apply {
             layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = pantallaDeEntrenamientoAdapter
         }
     }
