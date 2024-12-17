@@ -9,8 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.debuggers.R
 import com.example.debuggers.model.Ejercicio
+
 
 class EjerciciosAdapter(
     private val context: Context,
@@ -38,8 +41,12 @@ class EjerciciosAdapter(
         val resourceId = context.resources.getIdentifier(ejercicio.imagen, "drawable", context.packageName)
         if (resourceId != 0) {
             holder.imagenEjercicio.setImageResource(resourceId)
+            Glide.with(context)
+                .load(resourceId)
+                .transform(CircleCrop())
+                .into(holder.imagenEjercicio)
         } else {
-            // Handle the case where the resource is not found
+
         }
         // Manejo del CheckBox
         holder.nombreEjercicio.isChecked = ejercicio.isSelected
