@@ -38,6 +38,10 @@ class ActivityUserPerfil : AppCompatActivity() {
         binding.IbRegresar.setOnClickListener{
             onBackPressedDispatcher.onBackPressed()
         }
+
+        binding.btnHistorial.setOnClickListener {
+            startActivity(Intent(this, ActivityHistorial::class.java))
+        }
     }
 
     private fun cargarInformacion() {
