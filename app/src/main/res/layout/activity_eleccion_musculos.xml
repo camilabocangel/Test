@@ -38,7 +38,7 @@
 
         </TextView>
 
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_musculos"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -50,8 +50,9 @@
                 android:layout_marginBottom="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/siguienteAElecEjercicios"
                 app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
-                app:layout_constraintVertical_bias="0.0">
-            </ListView>
+                app:layout_constraintVertical_bias="0.0"
+                tools:listitem="@layout/check_musculo" >
+            </androidx.recyclerview.widget.RecyclerView>
 
         <Button
             android:id="@+id/siguienteAElecEjercicios"

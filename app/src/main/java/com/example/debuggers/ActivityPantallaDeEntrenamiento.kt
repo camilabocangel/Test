@@ -2,6 +2,7 @@ package com.example.debuggers
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.debuggers.adapters.PantallaDeEntrenamientoAdapter.PantallaDeEntrenamientoAdapter
 import com.example.debuggers.databinding.ActivityPantallaDeEntrenamientoBinding
 import com.example.debuggers.dataclasses.ejercicios
+import com.example.debuggers.model.Ejercicio
 
 
 class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
@@ -21,9 +23,8 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
         binding = ActivityPantallaDeEntrenamientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setUpRecyclewViewEntrenamiento()
-
-
-
+        val ejSelected: List<Ejercicio> = intent.getParcelableArrayListExtra("ejerciciosSeleccionados") ?: emptyList()
+        Log.d("lista", "onCreate: "+ejSelected.toString())
         binding.siguienteAFelicidades.setOnClickListener {
             val intentFelicidades = Intent (this, ActivityFelicidades::class.java)
             startActivity(intentFelicidades)

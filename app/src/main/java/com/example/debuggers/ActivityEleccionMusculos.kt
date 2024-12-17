@@ -4,28 +4,29 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.debuggers.Helper.DatabaseHelper
+import com.example.debuggers.Helper.Musculo
 import com.example.debuggers.Helper.MusculosAdapter
 import com.example.debuggers.databinding.ActivityEleccionMusculosBinding
 import java.util.ArrayList
 
+
 class ActivityEleccionMusculos : AppCompatActivity() {
     private lateinit var binding: ActivityEleccionMusculosBinding
     private lateinit var helper: DatabaseHelper
+    private val selectedMusculos= mutableListOf<Musculo>()
     //private lateinit var listView: ListView
     private lateinit var selectedItems: MutableList<Int>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEleccionMusculosBinding.inflate(layoutInflater)
         //listView = findViewById(R.id.list_musculos)
-        selectedItems = mutableListOf()
-
-
         setContentView(binding.root)
 
         binding.siguienteAElecEjercicios.setOnClickListener {
             val intentEleccionEjercicios = Intent (applicationContext, ActivityEleccionEjercicios::class.java)
-            intentEleccionEjercicios.putIntegerArrayListExtra("musculosSeleccionados", ArrayList(selectedItems))
+            intentEleccionEjercicios.putParcelableArrayListExtra("musculosSeleccionados", ArrayList(selectedMusculos))
             startActivity(intentEleccionEjercicios)
         }
         binding.botonAtrasARegistro.setOnClickListener {
@@ -41,24 +42,21 @@ class ActivityEleccionMusculos : AppCompatActivity() {
             null, null, null, null, null
         )
 
-        val dataList = mutableListOf<Pair<Long, String>>()
+        val dataList = mutableListOf<Musculo>()
         with(cursor) {
             while (moveToNext()) {
                 val id = getLong(getColumnIndexOrThrow(DatabaseHelper.ID_MUSCULO))
                 val musculos = getString(getColumnIndexOrThrow(DatabaseHelper.MUSCULO))
-                dataList.add(id to musculos)
+                dataList.add(Musculo(id.toInt(), musculos, false))
             }
         }
-        binding.listMusculos.adapter = MusculosAdapter(this, dataList)
+        val layoutManager = LinearLayoutManager(this)
+        binding.listMusculos.layoutManager = layoutManager
+        binding.listMusculos.adapter = MusculosAdapter(this, dataList) {
+            selectedMusculos.clear()
+            selectedMusculos.addAll(it)
+        }
         cursor.close()
-        binding.listMusculos.setOnItemClickListener { _, _, position, _ ->
-            val item = dataList[position]
-            if (selectedItems.contains(item.first.toInt())) {
-                selectedItems.remove(item.first.toInt())
-            } else {
-                selectedItems.add(item.first.toInt())
-            }
-        }
     }
     /*override fun onResume() {
         super.onResume()

@@ -6,40 +6,34 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
+import androidx.recyclerview.widget.RecyclerView
 import com.example.debuggers.R
 
-class MusculosAdapter(context: Context, private val items: List<Pair<Long, String>>) :
-    ArrayAdapter<Pair<Long, String>>(context, R.layout.check_musculo, items) {
+class MusculosAdapter(context: Context,
+                      private val items: List<Musculo>,
+    private val onClick: (List<Musculo>) -> Unit) :
+RecyclerView.Adapter<MusculosAdapter.MusculoViewHolder>() {
 
-    private val itemStates = mutableMapOf<Long, Boolean>()
+    inner class MusculoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val checkBox: CheckBox = itemView.findViewById(R.id.checkbox_musculo)
 
-    init {
-        items.forEach { itemStates[it.first] = false }
     }
 
-    override fun getItemId(position: Int): Long {
-        val item = getItem(position)
-        if (item != null) {
-            return item.first
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusculoViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.check_musculo, parent, false)
+        return MusculoViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: MusculoViewHolder, position: Int) {
+        val musculo = items[position]
+
+        holder.checkBox.text = musculo.nombre
+        // Manejo del CheckBox
+        holder.checkBox.isChecked = musculo.isSelected
+        holder.checkBox.setOnCheckedChangeListener { _, isChecked ->
+            musculo.isSelected = isChecked
+            onClick(items.filter { it.isSelected }) //devuelve la lista filtrada
         }
-        return -1
     }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.check_musculo, parent, false)
-        val checkBox: CheckBox = view.findViewById(R.id.checkbox_musculo)
-        val item = getItem(position)
-
-        checkBox.text = item?.second
-        checkBox.isChecked = itemStates[item?.first] == true
-
-        // Add a listener to handle checkbox changes
-        checkBox.setOnCheckedChangeListener { _, isChecked ->
-            if (item != null) {
-                itemStates[item.first] = isChecked
-            }
-        }
-
-        return view
-    }
+    override fun getItemCount(): Int = items.size
 }

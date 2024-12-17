@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-data class Quadruple<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
+data class Quintuple<A, B, C, D, E>(val first: A, val second: B, val third: C, val fourth: D, val fifth: E)
 
 
 
@@ -13,7 +13,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
 
     companion object{
         private const val DATABASE_NAME = "gimnasio.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 3
 
         const val TABLE_NAME1 = "musculos"
         const val ID_MUSCULO = "id"
@@ -23,10 +23,14 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
         const val ID_EJERCICIOS = "id_ejercicos"
         const val NOMBRE_EJERCICIO = "nombre_ejercicio"
         const val GIF_EJERCICIO = "gif_ejercicio"
+        const val IMAGEN_EJERCICIO = "imagen_ejercicio"
 
-        const val TABLE_NAME3 = "registro_ejercicios"
+        const val TABLE_NAME3 = "registro"
         const val ID_REGISTRO = "id_registro"
         const val FECHA = "fecha"
+
+        const val TABLE_NAME4 = "registro_ejercicios"
+        const val ID_EJ_REGISTRO = "id_ejercicio_registro"
         const val PESO = "peso"
         const val TERMINADO = "terminado"
 
@@ -53,31 +57,72 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
             $ID_EJERCICIOS INTEGER PRIMARY KEY,
             $ID_MUSCULO NOT NULL,
             $NOMBRE_EJERCICIO TEXT NOT NULL,
-            $GIF_EJERCICIO TEXT NOT NULL
+            $GIF_EJERCICIO TEXT NOT NULL,
+            $IMAGEN_EJERCICIO TEXT NOT NULL
             )
             """
         db?.execSQL(createTable2)
         val createTable3 = """
              CREATE TABLE $TABLE_NAME3 (
              $ID_REGISTRO INTEGER PRIMARY KEY AUTOINCREMENT,
+             $FECHA DATETIME NOT NULL
+             )
+             """
+        db?.execSQL(createTable3)
+        val createTable4 = """
+             CREATE TABLE $TABLE_NAME4 (
+             $ID_EJ_REGISTRO INTEGER PRIMARY KEY AUTOINCREMENT,
+             $ID_REGISTRO INTEGER NOT NULL,
              $ID_EJERCICIOS NOT NULL,
-             $FECHA DATETIME NOT NULL,
              $PESO INTEGER NOT NULL,
              $TERMINADO BOOLEAN NOT NULL
              )
              """
-        db?.execSQL(createTable3)
+        db?.execSQL(createTable4)
 
         val musculos = listOf("Biceps", "Triceps","Cuadriceps", "Espalda", "Femoral", "Pecho")
         val ejercicios = listOf(
-            Quadruple(1,1, "Curl con barra", "hamster.gif"),
-            Quadruple(2,1, "Curl martillo", "sun.gif"),
-            Quadruple(3,1, "Curl predicador", "hamster.gif"),
-            Quadruple(4,1, "Curl inverso", "sun.gif"),
-            Quadruple(5,2, "Fondos paralelas", "hamster.gif"),
-            Quadruple(6,2, "Skull chushers", "sun.gif"),
-            Quadruple(7,2, "Copa con mancuernas", "hamster.gif"),
-            Quadruple(8,2, "Pullover", "hamster.gif")
+            Quintuple(1,1, "Crossover bicep polea", "crossover_bicep_polea.mp4","jalon_pecho"),
+            Quintuple(2,1, "Curl barra", "curl_barra.mp4","jalon_pecho"),
+            Quintuple(3,1, "Curl concentrado", "curl_concentrado.mp4","jalon_pecho"),
+            Quintuple(4,1, "Curl inverso", "curl_inverso.mp4","jalon_pecho"),
+            Quintuple(5,1, "Curl martillo", "curl_martillo.mp4","jalon_pecho"),
+            Quintuple(6,1, "Curl predicador", "curl_predicador.mp4","jalon_pecho"),
+            Quintuple(7,2, "Copa con mancuernas", "hamster.gif","imagen7"),
+            Quintuple(8,2, "Fondos en paralelas", "hamster.gif","imagen8"),
+            Quintuple(9,2, "Overhead tricep extension", "crossover_bicep_polea.mp4","imagen9"),
+            Quintuple(10,2, "Pullover tricep", "sun.gif","imagen10"),
+            Quintuple(11,2, "Pushdown con cuerda", "hamster.gif","imagen11"),
+            Quintuple(12,2, "Skull crushers", "sun.gif","imagen12"),
+            Quintuple(13,2, "Tricep kickbacks", "hamster.gif","imagen13"),
+            Quintuple(14,3, "Bulgaras", "hamster.gif","imagen14"),
+            Quintuple(15,3, "Extensiones de cuadrticeps", "hamster.gif","imagen15"),
+            Quintuple(16,3, "Front squats", "crossover_bicep_polea.mp4","imagen16"),
+            Quintuple(17,3, "Hack squat", "sun.gif","imagen17"),
+            Quintuple(18,3, "Lounges estaticos", "hamster.gif","imagen18"),
+            Quintuple(19,3, "Prensa de piernas", "sun.gif","imagen19"),
+            Quintuple(20,3, "Squats", "hamster.gif","imagen20"),
+            Quintuple(21,4, "Dominadas", "hamster.gif","imagen21"),
+            Quintuple(22,4, "Good mornings", "hamster.gif","imagen22"),
+            Quintuple(23,4, "Jalon al pecho", "crossover_bicep_polea.mp4","imagen23"),
+            Quintuple(24,4, "Pushdown", "sun.gif","imagen24"),
+            Quintuple(25,4, "Remo banco inclinado", "hamster.gif","imagen25"),
+            Quintuple(26,4, "Remo barra t", "sun.gif","imagen26"),
+            Quintuple(27,4, "Remo unilateral", "hamster.gif","imagen27"),
+            Quintuple(28,5, "Femoral acostado", "hamster.gif","imagen28"),
+            Quintuple(29,5, "Femoral sentado", "hamster.gif","imagen29"),
+            Quintuple(30,5, "Hip thrust", "crossover_bicep_polea.mp4","imagen30"),
+            Quintuple(31,5, "Hiperextensiones", "sun.gif","imagen31"),
+            Quintuple(32,5, "Patada unilateral", "hamster.gif","imagen32"),
+            Quintuple(33,5, "Peso muerto", "sun.gif","imagen33"),
+            Quintuple(34,5, "Prensa con apertura", "hamster.gif","imagen34"),
+            Quintuple(35,6, "Cruce de poleas", "hamster.gif","imagen35"),
+            Quintuple(36,6, "Jale abierto inclinado", "hamster.gif","imagen36"),
+            Quintuple(37,6, "Press con barra", "crossover_bicep_polea.mp4","imagen37"),
+            Quintuple(38,6, "Press inclinado", "sun.gif","imagen38"),
+            Quintuple(39,6, "Press en maquina", "hamster.gif","imagen39"),
+            Quintuple(40,6, "Press plano mancuernas", "sun.gif","imagen40"),
+            Quintuple(41,6, "Pushups", "hamster.gif","imagen41")
         )
 
         db?.beginTransaction()
@@ -91,7 +136,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
                 statement?.executeInsert()
             }
 
-            val sql1 = "INSERT INTO $TABLE_NAME2 ($ID_EJERCICIOS, $ID_MUSCULO, $NOMBRE_EJERCICIO, $GIF_EJERCICIO) VALUES (?,?,?,?)"
+            val sql1 = "INSERT INTO $TABLE_NAME2 ($ID_EJERCICIOS, $ID_MUSCULO, $NOMBRE_EJERCICIO, $GIF_EJERCICIO, $IMAGEN_EJERCICIO) VALUES (?,?,?,?,?)"
             val statement1 = db?.compileStatement(sql1)
 
             for (e in ejercicios) {
@@ -100,6 +145,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
                 statement1?.bindLong(2,e.second.toLong())
                 statement1?.bindString(3,e.third)
                 statement1?.bindString(4,e.fourth)
+                statement1?.bindString(5,e.fifth)
                 statement1?.executeInsert()
             }
 
@@ -114,6 +160,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME1")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME2")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME3")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME4")
         onCreate(db)
     }
 }
