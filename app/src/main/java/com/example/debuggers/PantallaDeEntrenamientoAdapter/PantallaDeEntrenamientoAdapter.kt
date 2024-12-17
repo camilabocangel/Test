@@ -37,9 +37,22 @@ class PantallaDeEntrenamientoAdapter :
         RecyclerView.ViewHolder(binding.root)  {
         fun binding(data: ejercicios) {
 
-
             binding.ejercicioEnPeso.text = data.nombreEj
-
+            binding.contador.text = data.peso.toString()
+            binding.botonAumentarPeso.setOnClickListener {
+                data.peso += 1
+                binding.contador.text = data.peso.toString()
+            }
+            binding.botonRebajarPeso.setOnClickListener {
+                if (data.peso > 0) {
+                    data.peso -= 1
+                    binding.contador.text = data.peso.toString()
+                }
+            }
+            binding.checkboxEntrenamiento.isChecked = data.completado
+            binding.checkboxEntrenamiento.setOnCheckedChangeListener { _, isChecked ->
+                data.completado = isChecked
+            }
 
         }
     }
@@ -47,6 +60,7 @@ class PantallaDeEntrenamientoAdapter :
     fun addDataToList(list: List<ejercicios>) {
         listaDatos.clear()
         listaDatos.addAll(list)
+        notifyDataSetChanged()
     }
 
 }
