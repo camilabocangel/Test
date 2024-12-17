@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -11,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.debuggers"
-        minSdk = 29
+        minSdk = 33
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
