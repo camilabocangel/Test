@@ -30,7 +30,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cuadroVerde"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient3">
                 <ImageView
                     android:id="@+id/gifEjercicio"
                     android:layout_width="250dp"
@@ -62,7 +63,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cuadroVerde2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient5">
                 <TextView
                     android:id="@+id/ejercicioEnPeso"
                     android:layout_width="wrap_content"

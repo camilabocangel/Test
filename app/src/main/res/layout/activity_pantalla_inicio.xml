@@ -223,7 +223,7 @@
                     android:id="@+id/iconoHistorialPantallaInicio"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/pesita"
+                    android:src="@drawable/pesita_blanca"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

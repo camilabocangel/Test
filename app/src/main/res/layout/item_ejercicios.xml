@@ -9,10 +9,10 @@
     android:layout_marginEnd="8dp">
     <androidx.cardview.widget.CardView
         android:id="@+id/item_ejercicio"
-        android:layout_width="370dp"
+        android:layout_width="350dp"
         android:layout_height="150dp"
         app:cardCornerRadius="40dp"
-        app:cardBackgroundColor="@color/verde"
+        android:backgroundTint="@color/fondo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cuadroVerde"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="150dp"
+            android:background="@drawable/cardview_ejercicios">
             <ImageView
                 android:id="@+id/imagenEjercicio"
                 android:layout_width="120dp"
@@ -40,7 +41,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/cuadroVerde"
                 app:layout_constraintEnd_toStartOf="@id/imagenEjercicio"
                 android:text="@string/CURLBARRA"
-                android:textColor="@color/fondo"
+                android:textColor="@color/white"
                 android:theme="@style/checkboxColoreado"
                 android:fontFamily="@font/lato_bold"
                 android:textSize="25sp"
