@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainEleccionMusculo"
+    android:id="@+id/mainHistorial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityEleccionEjercicios">
+    tools:context=".ActivityHistorial">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp">
             <ImageView
-                android:id="@+id/botonAtrasAEleccionMusculo"
+                android:id="@+id/botonAtrasAPantallaInicio"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/flecha_atras"
@@ -31,21 +31,23 @@
                 android:id="@+id/tituloEleccionMusculo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ELECCIONEJERCICIOS"
-                android:textColor="@color/verde"
+                android:text="@string/HISTORIAL"
+                android:textColor="@color/white"
                 android:textSize="35sp"
-                android:fontFamily="@font/lato_regular"
-                app:layout_constraintTop_toBottomOf="@id/botonAtrasAEleccionMusculo"
-                app:layout_constraintStart_toStartOf="@id/botonAtrasAEleccionMusculo"
+                android:fontFamily="@font/lato_bold"
+                app:layout_constraintTop_toBottomOf="@id/botonAtrasAPantallaInicio"
+                app:layout_constraintStart_toStartOf="@id/botonAtrasAPantallaInicio"
                 android:layout_marginTop="30dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:layout_weight="1">
+            android:gravity="center"
+            android:layout_marginBottom="50dp">
             <androidx.core.widget.NestedScrollView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,31 +57,19 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerEjercicios"
-                        android:layout_width="match_parent"
+                        android:id="@+id/recyclerHistorial"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="44dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginTop="50dp"
-                        tools:listitem="@layout/item_ejercicios" />
+                        tools:listitem="@layout/item_historial" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.core.widget.NestedScrollView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end">
-            <Button
-                android:id="@+id/siguienteAEntrenamiento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="@string/SIGUIENTE"
-                android:backgroundTint="@color/verde"
-                android:textColor="@color/black"
-                android:layout_marginBottom="500dp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

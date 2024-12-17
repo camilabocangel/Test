@@ -9,7 +9,7 @@
     android:layout_marginEnd="8dp">
     <androidx.cardview.widget.CardView
         android:id="@+id/item_ejercicio"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="150dp"
         app:cardCornerRadius="40dp"
         android:backgroundTint="@color/fondo"
@@ -44,7 +44,7 @@
                 android:textColor="@color/white"
                 android:theme="@style/checkboxColoreado"
                 android:fontFamily="@font/lato_bold"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layoutDirection="rtl"
                 android:layout_marginEnd="10dp">
             </CheckBox>

@@ -39,6 +39,11 @@ class ActivityPantallaInicio : AppCompatActivity() {
             val intentPerfilUsuario = Intent (this, ActivityUserPerfil::class.java)
             startActivity(intentPerfilUsuario)
         }
+        binding.iconoHistorialPantallaInicio.setOnClickListener {
+            val intentHistorial = Intent (this, ActivityHistorial::class.java)
+            startActivity(intentHistorial)
+        }
+
     }
 
     private fun obtenerDatoCurioso(): String {
