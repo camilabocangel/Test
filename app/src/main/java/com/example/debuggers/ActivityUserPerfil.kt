@@ -22,7 +22,6 @@ class ActivityUserPerfil : AppCompatActivity() {
         binding = ActivityUserPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicializar FirebaseAuth
         firebaseAuth = FirebaseAuth.getInstance()
 
         cargarInformacion()
@@ -31,12 +30,13 @@ class ActivityUserPerfil : AppCompatActivity() {
             startActivity(Intent(this, ActivityEditarInformacion::class.java))
         }
 
-        // Configurar el botón para cerrar sesión
         binding.btnCerrarSesion.setOnClickListener {
             firebaseAuth.signOut()
-            // Navegar a la pantalla de inicio de sesión
             startActivity(Intent(this, ActivityLogin::class.java))
-            finishAffinity() // Finalizar todas las actividades en la pila
+            finishAffinity()
+        }
+        binding.IbRegresar.setOnClickListener{
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 
@@ -50,12 +50,10 @@ class ActivityUserPerfil : AppCompatActivity() {
                     val peso = snapshot.child("peso").value?.toString() ?: "N/A"
                     val imagen = snapshot.child("imagen").value?.toString()
 
-                    // Setear la información
                     binding.txtNombre.text = nombres
                     binding.txtAltura.text = altura
                     binding.txtPeso.text = peso
 
-                    // Setear la imagen del perfil del usuario
                     try {
                         Glide.with(this@ActivityUserPerfil)
                             .load(imagen)

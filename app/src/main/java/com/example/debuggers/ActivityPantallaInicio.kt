@@ -27,5 +27,10 @@ class ActivityPantallaInicio : AppCompatActivity() {
             val intentPerfilUsuario = Intent (this, ActivityUserPerfil::class.java)
             startActivity(intentPerfilUsuario)
         }
+
+        binding.iconoVideos.setOnClickListener {
+            val intentPantallaVideos = Intent (this, ActivityPantallaVideos::class.java)
+            startActivity(intentPantallaVideos)
+        }
     }
 }

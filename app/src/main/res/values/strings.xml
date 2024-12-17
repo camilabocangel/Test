@@ -55,4 +55,12 @@
     <string name="Txt_titulo_edit">Editar informacion</string>
     <string name="btn_Actualizar">Actualizar</string>
 
+    <string name="etTituloVideo">Titulo del video</string>
+    <string name="btnSelectVideo">Seleccionar video</string>
+    <string name="btnSubirVideo">Subir video</string>
+    <string name="txtEstado">No se ha seleccionado un video</string>
+    <string name="tvTituloVideo">Titulo del video</string>
+    <string name="tvAutorVideo">Autor del video</string>
+    <string name="tvFechaSubida">dd/MM/yyyy hh:mm</string>
+
 </resources>
