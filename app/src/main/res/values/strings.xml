@@ -51,7 +51,9 @@
     <string name="DATOCURIOSO">Entrenar fuerza acelera tu metabolismo hasta 72 horas después</string>
     <string name="PERFILPANTALLAINICIO">PERFIL</string>
     <string name="HISTORIAL">HISTORIAL</string>
-
+    <string name="FECHA">FECHA</string>
+    <string name="EJERCICIOHISTORIAL">Ejercicio</string>
+    <string name="PESOHISTORIAL">Peso</string>
     <string name="Txt_titulo_edit">Editar informacion</string>
     <string name="btn_Actualizar">Actualizar</string>
 

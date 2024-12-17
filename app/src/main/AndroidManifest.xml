@@ -23,6 +23,9 @@
             android:name=".ActivityPantallaVideos"
             android:exported="false" />
         <activity
+            android:name=".ActivityHistorial"
+            android:exported="false" />
+        <activity
             android:name=".ActivitySplashScreen"
             android:exported="true">
             <intent-filter>

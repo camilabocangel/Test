@@ -11,153 +11,63 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/fondo">
+
         <ImageView
             android:id="@+id/botonAtrasARegistro"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/flecha_atras"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
-            android:layout_marginStart="15dp">
+            android:src="@drawable/flecha_atras"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         </ImageView>
 
         <TextView
             android:id="@+id/tituloEleccionMusculo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/lato_regular"
             android:text="@string/QUEENTRENARASMUSCULO"
             android:textColor="@color/verde"
             android:textSize="35sp"
-            android:fontFamily="@font/lato_regular"
-            app:layout_constraintTop_toBottomOf="@id/botonAtrasARegistro"
             app:layout_constraintStart_toStartOf="@id/botonAtrasARegistro"
-            android:layout_marginTop="30dp">
+            app:layout_constraintTop_toBottomOf="@id/botonAtrasARegistro">
+
         </TextView>
 
-        <ScrollView
-            android:id="@+id/scrollMusculos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
-            app:layout_constraintVertical_bias="0.0">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ListView
+                android:id="@+id/list_musculos"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <CheckBox
-                    android:id="@+id/checkbox_biceps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="300dp"
-                    android:layoutDirection="rtl"
-                    android:text="@string/BICEPS"
-                    android:button="@null"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:drawableRight="@drawable/checkbox"
-                    android:drawablePadding="100dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <CheckBox
-                    android:id="@+id/checkbox_triceps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:text="@string/TRICEPS"
-                    android:button="@null"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:drawableRight="@drawable/checkbox"
-                    android:drawablePadding="100dp"
-                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_biceps"
-                    android:layout_marginTop="10dp"/>
-
-                <CheckBox
-                    android:id="@+id/checkbox_pecho"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:text="@string/PECHO"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/checkbox"
-                    android:drawablePadding="100dp"
-                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_triceps"
-                    android:layout_marginTop="10dp"/>
-
-                <CheckBox
-                    android:id="@+id/checkbox_espalda"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:text="@string/ESPALDA"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/checkbox"
-                    android:drawablePadding="100dp"
-                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_pecho"
-                    android:layout_marginTop="10dp"/>
-
-                <CheckBox
-                    android:id="@+id/checkbox_femoral"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:text="@string/FEMORAL"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/checkbox"
-                    android:drawablePadding="100dp"
-                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_espalda"
-                    android:layout_marginTop="10dp"/>
-
-                <CheckBox
-                    android:id="@+id/checkbox_cuadriceps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:text="@string/CUADRICEPS"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:button="@null"
-                    android:drawableRight="@drawable/checkbox"
-                    android:drawablePadding="100dp"
-                    app:layout_constraintStart_toStartOf="@id/checkbox_biceps"
-                    app:layout_constraintTop_toBottomOf="@id/checkbox_femoral"
-                    android:layout_marginTop="10dp"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/siguienteAElecEjercicios"
+                app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
+                app:layout_constraintVertical_bias="0.0">
+            </ListView>
 
         <Button
             android:id="@+id/siguienteAElecEjercicios"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="@string/SIGUIENTE"
-            android:backgroundTint="@color/verde"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/scrollMusculos"
-            app:layout_constraintEnd_toEndOf="@id/tituloEleccionMusculo"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="50dp">
+
+            android:backgroundTint="@color/verde"
+            android:text="@string/SIGUIENTE"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
         </Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.cardview.widget.CardView
 import com.example.debuggers.databinding.ActivityPantallaInicioBinding
+import org.json.JSONArray;
+import org.json.JSONException;
+import java.io.IOException
+import java.util.Random;
 
 class ActivityPantallaInicio : AppCompatActivity() {
 
@@ -18,7 +21,16 @@ class ActivityPantallaInicio : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        binding.cardviewPersonalizaRutina.setOnClickListener {
+        binding.datoCurioso.text = try {
+            obtenerDatoCurioso()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            "Error al cargar el dato."
+        }
+
+        val cardView = findViewById<CardView>(R.id.cardviewPersonalizaRutina)
+
+        cardView.setOnClickListener {
             val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
             startActivity(intentEleccionMusculos)
         }
@@ -27,10 +39,30 @@ class ActivityPantallaInicio : AppCompatActivity() {
             val intentPerfilUsuario = Intent (this, ActivityUserPerfil::class.java)
             startActivity(intentPerfilUsuario)
         }
-
+        binding.iconoHistorialPantallaInicio.setOnClickListener {
+            val intentHistorial = Intent (this, ActivityHistorial::class.java)
+            startActivity(intentHistorial)
+        }
         binding.iconoVideos.setOnClickListener {
             val intentPantallaVideos = Intent (this, ActivityPantallaVideos::class.java)
             startActivity(intentPantallaVideos)
+        }
+
+    }
+
+    private fun obtenerDatoCurioso(): String {
+        val inputStream = resources.openRawResource(R.raw.datos_curiosos)
+        return try {
+            val jsonText = inputStream.bufferedReader().use { it.readText() }
+            val jsonArray = JSONArray(jsonText)
+            val randomIndex = Random().nextInt(jsonArray.length())
+            jsonArray.getString(randomIndex)
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+            "Error al leer el archivo."
+        } catch (jsonException: JSONException) {
+            jsonException.printStackTrace()
+            "Error al procesar los datos."
         }
     }
 }
