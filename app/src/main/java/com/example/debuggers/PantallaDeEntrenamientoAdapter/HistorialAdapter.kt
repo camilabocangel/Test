@@ -1,4 +1,4 @@
-package com.example.debuggers.PantallaDeEntrenamientoAdapter
+/*package com.example.debuggers.PantallaDeEntrenamientoAdapter
 
 
 import android.content.Context
@@ -51,4 +51,4 @@ class HistorialAdapter :
         notifyDataSetChanged()
     }
 
-}
+}*/

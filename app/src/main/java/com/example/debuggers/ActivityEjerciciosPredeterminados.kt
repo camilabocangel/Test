@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.debuggers.PantallaDeEntrenamientoAdapter.HistorialAdapter
 import com.example.debuggers.PantallaDeEntrenamientoAdapter.PredeterminadosEjerciciosAdapter
 import com.example.debuggers.databinding.ActivityEjerciciosPredeterminadosBinding
 import com.example.debuggers.databinding.ActivityEleccionEjerciciosBinding

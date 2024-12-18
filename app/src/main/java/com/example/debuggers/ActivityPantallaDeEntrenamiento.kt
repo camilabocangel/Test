@@ -47,6 +47,7 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
 
         // Configura botones
         binding.siguienteAFelicidades.setOnClickListener {
+            dbHelper.insertRutina(ejerciciosSeleccionados)
             val intentFelicidades = Intent(this, ActivityFelicidades::class.java)
             startActivity(intentFelicidades)
         }
