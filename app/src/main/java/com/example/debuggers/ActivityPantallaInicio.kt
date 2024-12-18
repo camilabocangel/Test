@@ -28,11 +28,18 @@ class ActivityPantallaInicio : AppCompatActivity() {
             "Error al cargar el dato."
         }
 
-        val cardView = findViewById<CardView>(R.id.cardviewPersonalizaRutina)
+        val cardView2 = findViewById<CardView>(R.id.cardviewPersonalizaRutina)
 
-        cardView.setOnClickListener {
+        cardView2.setOnClickListener {
             val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
             startActivity(intentEleccionMusculos)
+        }
+
+        val cardView1 = findViewById<CardView>(R.id.cardviewSinTiempo)
+
+        cardView1.setOnClickListener {
+            val intentEjerciciosPredeterminados = Intent (applicationContext, ActivityEjerciciosPredeterminados::class.java)
+            startActivity(intentEjerciciosPredeterminados)
         }
 
         binding.iconoPerfilPantallaInicio.setOnClickListener {
