@@ -1,8 +1,8 @@
 package com.example.debuggers.dataclasses
 
-data class ejercicios(
-    val imagen:String,
+data class ejerciciosPredeterminados(
+    val imagen:Int,
     val nombreEj:String,
-    var peso: Int = 0,
+    val nombreMs:String,
     var completado: Boolean = false
 )

@@ -9,5 +9,6 @@ data class Ejercicio(
     val nombre: String,
     val gif: String,
     val imagen: String,
-    var isSelected: Boolean=false
+    var isSelected: Boolean=false,
+    var peso: Int
 ):Parcelable

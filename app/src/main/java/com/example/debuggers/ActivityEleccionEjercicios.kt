@@ -10,7 +10,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.debuggers.databinding.ActivityEleccionEjerciciosBinding
 import com.example.debuggers.dataclasses.ejercicios
-import com.example.debuggers.dataclasses.ejerciciosimagen
 import androidx.recyclerview.widget.RecyclerView
 import com.example.debuggers.Helper.DatabaseHelper
 import com.example.debuggers.Helper.Musculo
@@ -44,7 +43,8 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
         recyclerEjercicios.adapter = ejerciciosAdapter
         binding.siguienteAEntrenamiento.setOnClickListener {
             val intentEntrenamiento = Intent (this, ActivityPantallaDeEntrenamiento::class.java)
-            intent.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(selectedEjercicios))
+            intentEntrenamiento.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(selectedEjercicios))
+            intentEntrenamiento.putParcelableArrayListExtra("musculosSeleccionados", ArrayList(selectedItems))
             startActivity(intentEntrenamiento)
         }
         binding.botonAtrasAEleccionMusculo.setOnClickListener {
@@ -68,7 +68,8 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
                     nombre = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.NOMBRE_EJERCICIO)),
                     gif = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.GIF_EJERCICIO)),
                     imagen = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.IMAGEN_EJERCICIO)),
-                    isSelected = false
+                    isSelected = false,
+                    peso = 10
                 )
                 ejercicios.add(ejercicio)
             } while (cursor.moveToNext())

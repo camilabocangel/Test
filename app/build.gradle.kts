@@ -60,6 +60,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.firebase:firebase-storage")
     implementation("com.google.code.gson:gson:2.11.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
     implementation ("androidx.core:core-splashscreen:1.0.0-rc01")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

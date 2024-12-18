@@ -21,7 +21,7 @@ class ActivityHistorial : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHistorialBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setUpRecyclewViewHistorial()
+        //setUpRecyclewViewHistorial()
 
         binding.botonAtrasAPantallaInicio.setOnClickListener {
             val intentPantallaInicio = Intent (this, ActivityPantallaInicio::class.java)
@@ -29,7 +29,7 @@ class ActivityHistorial : AppCompatActivity() {
         }
     }
 
-    fun setUpRecyclewViewHistorial(){
+    /*fun setUpRecyclewViewHistorial(){
         val listaDatos = mutableListOf(
             ejercicios(
                 nombreEj = "biceps",
@@ -69,5 +69,5 @@ class ActivityHistorial : AppCompatActivity() {
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = HistorialAdapter
         }
-    }
+    }*/
 }
