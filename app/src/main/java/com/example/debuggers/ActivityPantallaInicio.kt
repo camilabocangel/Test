@@ -50,7 +50,7 @@ class ActivityPantallaInicio : AppCompatActivity() {
             val intentHistorial = Intent (this, ActivityHistorial::class.java)
             startActivity(intentHistorial)
         }
-        binding.iconoVideos.setOnClickListener {
+        binding.cardviewVideos.setOnClickListener {
             val intentPantallaVideos = Intent (this, ActivityPantallaVideos::class.java)
             startActivity(intentPantallaVideos)
         }
