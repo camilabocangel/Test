@@ -42,7 +42,7 @@ class ActivityEjerciciosPredeterminados : AppCompatActivity() {
             ),
             ejerciciosPredeterminados(
                 nombreMs = "Cuadriceps y Femoral",
-                nombreEj = "Bulgaras, Extensiones de cuadriceps, Hip Thrust, Peso muerto, Patada unilateral, Prensa de piernas",
+                nombreEj = "Bulgaras, Extensiones de cuadriceps , Hip Thrust , Peso muerto , Patada unilateral , Prensa de piernas .",
                 imagen = R.drawable.pesita,
             ),
             ejerciciosPredeterminados(
@@ -59,7 +59,7 @@ class ActivityEjerciciosPredeterminados : AppCompatActivity() {
             ),
         ejerciciosPredeterminados(
             nombreMs = "Cuadriceps y Femoral",
-            nombreEj = "Bulgaras, Extensiones de cuadriceps, Hip Thrust, Peso muerto, Patada unilateral, Prensa de piernas",
+            nombreEj = "Bulgaras, Extensiones de cuadriceps , Hip Thrust , Peso muerto , Patada unilateral , Prensa de piernas .",
             imagen = R.drawable.pesita,
         ),
         )
