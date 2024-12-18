@@ -2,65 +2,60 @@ package com.example.debuggers.adapters.PantallaDeEntrenamientoAdapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.debuggers.databinding.ItemEntrenamientoBinding
-import com.example.debuggers.dataclasses.ejercicios
+import com.bumptech.glide.Glide
+import com.example.debuggers.R
+import com.example.debuggers.model.Ejercicio
 
-class PantallaDeEntrenamientoAdapter :
-    RecyclerView.Adapter<PantallaDeEntrenamientoAdapter.EjemploViewHolder>() {
+class PantallaDeEntrenamientoAdapter(private val context: Context,
+                                     private val listaEjercicios:List<Ejercicio>,
+                                     private val onItemUpdated: (List<Ejercicio>) -> Unit
+) : RecyclerView.Adapter<PantallaDeEntrenamientoAdapter.EntrenamientoViewHolder>() {
 
-    private val listaDatos = mutableListOf<ejercicios>()
-    private var context: Context? = null
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): EjemploViewHolder {
-        context = parent.context
-        return EjemploViewHolder(
-            ItemEntrenamientoBinding.inflate(
-                LayoutInflater.from(context),
-                parent,
-                false
-            )
-        )
+    inner class EntrenamientoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val nombreEjercicio: TextView = itemView.findViewById(R.id.ejercicioEnPeso)
+        val gifEjercicio: ImageView = itemView.findViewById(R.id.gifEjercicio)
+        val pesoTextView: TextView = itemView.findViewById(R.id.contador)
+        val botonIncrementar: Button = itemView.findViewById(R.id.botonAumentarPeso)
+        val botonDecrementar: Button = itemView.findViewById(R.id.botonRebajarPeso)
+    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntrenamientoViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_entrenamiento, parent, false)
+        return EntrenamientoViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: EjemploViewHolder, position: Int) {
-        holder.binding(listaDatos[position])
-    }
-
-    override fun getItemCount(): Int = listaDatos.size
-
-    inner class EjemploViewHolder(private val binding: ItemEntrenamientoBinding) :
-        RecyclerView.ViewHolder(binding.root)  {
-        fun binding(data: ejercicios) {
-
-            binding.ejercicioEnPeso.text = data.nombreEj
-            binding.contador.text = data.peso.toString()
-            binding.botonAumentarPeso.setOnClickListener {
-                data.peso += 1
-                binding.contador.text = data.peso.toString()
-            }
-            binding.botonRebajarPeso.setOnClickListener {
-                if (data.peso > 0) {
-                    data.peso -= 1
-                    binding.contador.text = data.peso.toString()
-                }
-            }
-            binding.checkboxEntrenamiento.isChecked = data.completado
-            binding.checkboxEntrenamiento.setOnCheckedChangeListener { _, isChecked ->
-                data.completado = isChecked
-            }
-
+    override fun onBindViewHolder(holder: EntrenamientoViewHolder, position: Int) {
+        val ejercicio = listaEjercicios[position]
+        holder.nombreEjercicio.text = ejercicio.nombre
+        val resourceId = context.resources.getIdentifier(ejercicio.gif, "drawable", context.packageName)
+        if (resourceId != 0) {
+            Glide.with(context)
+            .asGif() // Indica que quieres cargar un GIF
+            .load(resourceId) // Aquí puedes usar un nombre de recurso o una URL
+            .into(holder.gifEjercicio)
         }
+
+        holder.pesoTextView.text = ejercicio.peso.toString()
+        holder.botonIncrementar.setOnClickListener {
+            ejercicio.peso += 1
+            holder.pesoTextView.text = ejercicio.peso.toString()
+            onItemUpdated(listaEjercicios)
+        }
+        holder.botonDecrementar.setOnClickListener {
+            if (ejercicio.peso > 0) {
+                ejercicio.peso -= 1
+                holder.pesoTextView.text = ejercicio.peso.toString()
+                onItemUpdated(listaEjercicios)
+            }
+        }
+
     }
 
-    fun addDataToList(list: List<ejercicios>) {
-        listaDatos.clear()
-        listaDatos.addAll(list)
-        notifyDataSetChanged()
-    }
+    override fun getItemCount(): Int = listaEjercicios.size
 
 }

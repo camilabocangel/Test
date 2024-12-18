@@ -13,7 +13,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
 
     companion object{
         private const val DATABASE_NAME = "gimnasio.db"
-        private const val DATABASE_VERSION = 3
+        private const val DATABASE_VERSION = 6
 
         const val TABLE_NAME1 = "musculos"
         const val ID_MUSCULO = "id"
@@ -82,8 +82,8 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
 
         val musculos = listOf("Biceps", "Triceps","Cuadriceps", "Espalda", "Femoral", "Pecho")
         val ejercicios = listOf(
-            Quintuple(1,1, "Crossover bicep polea", "crossover_bicep_polea.mp4","jalon_pecho"),
-            Quintuple(2,1, "Curl barra", "curl_barra.mp4","jalon_pecho"),
+            Quintuple(1,1, "Crossover bicep polea", "sun","jalon_pecho"),
+            Quintuple(2,1, "Curl barra", "sun","jalon_pecho"),
             Quintuple(3,1, "Curl concentrado", "curl_concentrado.mp4","jalon_pecho"),
             Quintuple(4,1, "Curl inverso", "curl_inverso.mp4","jalon_pecho"),
             Quintuple(5,1, "Curl martillo", "curl_martillo.mp4","jalon_pecho"),
