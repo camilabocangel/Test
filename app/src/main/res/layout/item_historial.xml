@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/fondo"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
@@ -22,7 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cuadroVerdeHistorial"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/gradient5">
             <TextView
                 android:id="@+id/fechaHistorial"
@@ -36,54 +37,16 @@
                 app:layout_constraintEnd_toEndOf="@id/cuadroVerdeHistorial"
                 android:layout_marginTop="10dp">
             </TextView>
-            <TextView
-                android:id="@+id/ejercicioHistorial"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/EJERCICIOHISTORIAL"
-                android:fontFamily="@font/lato_bold"
-                android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@id/fechaHistorial"
-                app:layout_constraintStart_toStartOf="@id/cuadroVerdeHistorial"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="35dp">
-            </TextView>
-            <TextView
-                android:id="@+id/pesoHistorial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/PESOHISTORIAL"
-                android:fontFamily="@font/lato_bold"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/fechaHistorial"
-                app:layout_constraintEnd_toEndOf="@id/cuadroVerdeHistorial"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="40dp">
-            </TextView>
-            <TextView
-                android:id="@+id/ejercicioHistorialRecycler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/EJERCICIOHISTORIAL"
-                android:fontFamily="@font/lato_bold"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/ejercicioHistorial"
-                app:layout_constraintStart_toStartOf="@id/ejercicioHistorial"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="40dp">
-            </TextView>
-            <TextView
-                android:id="@+id/pesoHistorialRecycler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/PESOHISTORIAL"
-                android:fontFamily="@font/lato_bold"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/pesoHistorial"
-                app:layout_constraintStart_toStartOf="@id/pesoHistorial"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="40dp">
-            </TextView>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/recycleDatos"
+                tools:listitem="@layout/item_datos">
+
+            </androidx.recyclerview.widget.RecyclerView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

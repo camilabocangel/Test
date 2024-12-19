@@ -47,14 +47,31 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
 
         // Configura botones
         binding.siguienteAFelicidades.setOnClickListener {
+            dbHelper.insertRutina(ejerciciosSeleccionados)
             val intentFelicidades = Intent(this, ActivityFelicidades::class.java)
             startActivity(intentFelicidades)
         }
 
         binding.cancelarEntrenamiento.setOnClickListener {
-            val intentAtrasEjercicio = Intent(this, ActivityEleccionEjercicios::class.java)
-            intentAtrasEjercicio.putParcelableArrayListExtra("musculosSeleccionados", ArrayList(musculosSeleccionados))
-            startActivity(intentAtrasEjercicio)
+            val actividadOrigen = intent.getStringExtra("actividad_origen")
+            val intentAtrasEjercicio = when (actividadOrigen) {
+                "ActivityEleccionEjercicios" -> {
+                    Intent(this, ActivityEleccionEjercicios::class.java).apply {
+                        putParcelableArrayListExtra("musculosSeleccionados", ArrayList(intent.getParcelableArrayListExtra("musculosSeleccionados")))
+                    }
+                }
+                "ActivityEjerciciosPredeterminados" -> {
+                    Intent(this, ActivityEjerciciosPredeterminados::class.java)
+                }
+                else -> {
+                    null
+                }
+            }
+            intentAtrasEjercicio?.let { startActivity(it) } // Si el intent no es nulo, inicia la actividad
         }
     }
 }
+
+//Intent(this, ActivityEleccionEjercicios::class.java)
+  //          intentAtrasEjercicio.putParcelableArrayListExtra("musculosSeleccionados", ArrayList(musculosSeleccionados))
+    //        startActivity(intentAtrasEjercicio)

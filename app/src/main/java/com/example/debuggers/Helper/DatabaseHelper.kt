@@ -1,8 +1,15 @@
 package com.example.debuggers.Helper
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.debuggers.dataclasses.Registro
+import com.example.debuggers.dataclasses.RegistroEjercicio
+import com.example.debuggers.model.Ejercicio
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 data class Quintuple<A, B, C, D, E>(val first: A, val second: B, val third: C, val fourth: D, val fifth: E)
 
@@ -55,7 +62,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
         val createTable2 = """
             CREATE TABLE $TABLE_NAME2 (
             $ID_EJERCICIOS INTEGER PRIMARY KEY,
-            $ID_MUSCULO NOT NULL,
+            $ID_MUSCULO INTEGER NOT NULL,
             $NOMBRE_EJERCICIO TEXT NOT NULL,
             $GIF_EJERCICIO TEXT NOT NULL,
             $IMAGEN_EJERCICIO TEXT NOT NULL
@@ -73,7 +80,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
              CREATE TABLE $TABLE_NAME4 (
              $ID_EJ_REGISTRO INTEGER PRIMARY KEY AUTOINCREMENT,
              $ID_REGISTRO INTEGER NOT NULL,
-             $ID_EJERCICIOS NOT NULL,
+             $ID_EJERCICIOS INTEGER NOT NULL,
              $PESO INTEGER NOT NULL,
              $TERMINADO BOOLEAN NOT NULL
              )
@@ -163,4 +170,51 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME4")
         onCreate(db)
     }
+    fun insertRutina(ejercicios: List<Ejercicio>):Unit {
+        val fecha = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
+
+        val db = this.writableDatabase
+        val contentValues = ContentValues().apply {
+            put(FECHA, fecha)
+        }
+        val idRegistro = db.insert(TABLE_NAME3, null, contentValues)
+        ejercicios.forEach { ejercicio ->
+            val cv = ContentValues().apply {
+                put(ID_REGISTRO, idRegistro)
+                put(ID_EJERCICIOS, ejercicio.id)
+                put(PESO, ejercicio.peso)
+                put(TERMINADO, ejercicio.isSelected)
+            }
+            db.insert(TABLE_NAME4, null, cv)
+        }
+    }
+    fun getHistorial(): List<Registro> {
+        val registros = mutableListOf<Registro>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM $TABLE_NAME3 ORDER BY fecha DESC", null)
+
+        with(cursor) {
+            while (moveToNext()) {
+                val id = getInt(getColumnIndexOrThrow(ID_REGISTRO))
+                val fecha = getString(getColumnIndexOrThrow(FECHA)) // Si guardaste la fecha como String
+                registros.add(Registro(id,fecha, mutableListOf()))
+            }
+        }
+        cursor.close()
+        registros.forEach{registro ->
+            val cursor2 = db.rawQuery("SELECT * FROM $TABLE_NAME4 JOIN $TABLE_NAME2 ON $TABLE_NAME4.$ID_EJERCICIOS = $TABLE_NAME2.$ID_EJERCICIOS WHERE id_registro = ?", arrayOf(registro.id.toString()))
+            with(cursor2) {
+                while (moveToNext()) {
+                    val ejercicio = getString(getColumnIndexOrThrow(NOMBRE_EJERCICIO))
+                    val peso = getInt(getColumnIndexOrThrow(PESO))  // Si guardaste la fecha como String
+                    registro.ejercicios.add(RegistroEjercicio(ejercicio,peso))
+                }
+            }
+            cursor2.close()
+        }
+        db.close()
+        return registros
+    }
+     //val nombre = getString(getColumnIndexOrThrow("nombre"))
+               // val peso = getInt(getColumnIndexOrThrow("peso"))
 }

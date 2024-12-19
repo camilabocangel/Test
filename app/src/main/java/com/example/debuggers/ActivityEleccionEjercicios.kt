@@ -45,6 +45,7 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
             val intentEntrenamiento = Intent (this, ActivityPantallaDeEntrenamiento::class.java)
             intentEntrenamiento.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(selectedEjercicios))
             intentEntrenamiento.putParcelableArrayListExtra("musculosSeleccionados", ArrayList(selectedItems))
+            intentEntrenamiento.putExtra("actividad_origen", "ActivityEleccionEjercicios") // Origen
             startActivity(intentEntrenamiento)
         }
         binding.botonAtrasAEleccionMusculo.setOnClickListener {

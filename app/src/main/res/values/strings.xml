@@ -57,6 +57,9 @@
     <string name="NECESITASMOTIVACION">¿NECESITAS MOTIVACIÓN?</string>
     <string name="VIDEOSMOTIVACIONALES">¡Hecha un vistazo a los videos que tenemos para ti o sube los tuyos!</string>
     <string name="PERFILPANTALLAINICIO">PERFIL</string>
+    <string name="GALERIAPANTALLAINICIO">GALERIA</string>
+    <string name="SUBE_TU_FOTO">SUBE TU FOTO</string>
+
     <string name="HISTORIAL">HISTORIAL</string>
     <string name="PREDETERMINADOS">EJERCICIOS PREDETERMINADOS</string>
     <string name="FECHA">FECHA</string>
@@ -67,7 +70,6 @@
     <string name="btn_Actualizar">Actualizar</string>
     <string name="DATOCURISO">DATO</string>
 
-
     <string name="etTituloVideo">Titulo del video</string>
     <string name="btnSelectVideo">Seleccionar video</string>
     <string name="btnSubirVideo">Subir video</string>
@@ -75,5 +77,36 @@
     <string name="tvTituloVideo">Titulo del video</string>
     <string name="tvAutorVideo">Autor del video</string>
     <string name="tvFechaSubida">dd/MM/yyyy hh:mm</string>
+
+    <string name="Musculo1">Pecho y Biceps </string>
+    <string name="Musculo2">Espalda y Femoral </string>
+    <string name="Musculo3">Triceps y Cuadriceps </string>
+    <string name="Rutina1">
+        Crossover bicep polea
+        Curl inverso
+        Curl martillo
+        Press con barra
+        Press inclinado
+        Pushups
+    </string>
+    <string name="Rutina2">
+        Jalón al pecho
+        Pushdown
+        Remo con barra t
+        Femoral sentado
+        Hiperextensiones
+        Peso muerto
+    </string>
+    <string name="Rutina3">
+        Fondos en paralelas
+        Copa con mancuernas
+        Pushdown con cuerda
+        Lounges estáticos
+        Prensa de piernas
+        Búlgaras
+    </string>
+
+    <string name="tomar_foto">Subir Foto</string>
+    <string name="seleccionar_foto">Galeria</string>
 
 </resources>

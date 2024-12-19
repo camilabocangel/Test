@@ -17,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityAgregarFoto"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityGaleriaFotos"
+            android:exported="false" />
+        <activity
             android:name=".ActivityEjerciciosPredeterminados"
             android:exported="false" />
         <activity
