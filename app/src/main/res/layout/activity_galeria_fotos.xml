@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_login"
+    android:background="@color/verde"
     tools:context=".ActivityGaleriaFotos">
 
     <androidx.core.widget.NestedScrollView
@@ -21,13 +21,13 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/titulo_galeria"
+            android:fontFamily="@font/lato_bold"
             android:textSize="40sp"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="120dp"
             android:layout_marginTop="30dp"
             android:text="@string/GALERIAPANTALLAINICIO"
-            android:textColor="@color/verde"/>
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:id="@+id/fechas"
@@ -63,13 +63,14 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/FAB_agregarFoto"
-            android:layout_margin="30dp"
-            android:backgroundTint="@color/verde"
+
             android:src="@drawable/ic_agregar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="100dp"
+            android:layout_marginEnd="30dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    android:background="@drawable/fondo_login"
+    android:background="@color/black"
     tools:context=".ActivityAgregarVideo">
 
 
@@ -69,8 +69,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnSelectVideo"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="15sp"
         android:textAllCaps="true"
         app:cornerRadius="8dp"
+        android:alpha="0.7"
         android:textColor="@color/black"
         android:backgroundTint="@color/verde"
         android:layout_marginTop="25dp"
@@ -85,11 +88,25 @@
         android:text="@string/btnSubirVideo"
         android:backgroundTint="@color/verde"
         android:textColor="@color/black"
+        android:fontFamily="@font/lato_bold"
+        android:alpha="0.7"
         android:textAllCaps="true"
         app:cornerRadius="8dp"
+        android:textSize="15sp"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/btnSelectVideo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btnSubitVideo"
+        app:layout_constraintBottom_toBottomOf="@id/btnSubitVideo"
+        app:layout_constraintStart_toStartOf="@id/btnSubitVideo"
+        app:layout_constraintEnd_toEndOf="@id/btnSubitVideo"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/black"
+        android:textSize="15sp">
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
