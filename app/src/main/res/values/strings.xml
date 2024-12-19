@@ -73,6 +73,34 @@
     <string name="tvAutorVideo">Autor del video</string>
     <string name="tvFechaSubida">dd/MM/yyyy hh:mm</string>
 
+    <string name="Musculo1">Pecho y Biceps </string>
+    <string name="Musculo2">Espalda y Femoral </string>
+    <string name="Musculo3">Triceps y Cuadriceps </string>
+    <string name="Rutina1">
+        Crossover bicep polea
+        Curl inverso
+        Curl martillo
+        Press con barra
+        Press inclinado
+        Pushups
+    </string>
+    <string name="Rutina2">
+        Jalón al pecho
+        Pushdown
+        Remo con barra t
+        Femoral sentado
+        Hiperextensiones
+        Peso muerto
+    </string>
+    <string name="Rutina3">
+        Fondos en paralelas
+        Copa con mancuernas
+        Pushdown con cuerda
+        Lounges estáticos
+        Prensa de piernas
+        Búlgaras
+    </string>
+
     <string name="tomar_foto">Subir Foto</string>
     <string name="seleccionar_foto">Galeria</string>
 
