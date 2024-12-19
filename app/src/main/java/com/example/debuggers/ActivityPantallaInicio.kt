@@ -55,6 +55,12 @@ class ActivityPantallaInicio : AppCompatActivity() {
             startActivity(intentPantallaVideos)
         }
 
+        binding.cardviewGaleriaPantallaInicial.setOnClickListener {
+            val intentPantallaGaleria = Intent (this, ActivityGaleriaFotos::class.java)
+            startActivity(intentPantallaGaleria)
+        }
+
+
     }
 
     private fun obtenerDatoCurioso(): String {

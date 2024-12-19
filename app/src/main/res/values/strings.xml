@@ -52,6 +52,9 @@
     <string name="VIDEOSMOTIVACIONALES">¡Hecha un vistazo a los videos que tenemos para ti!</string>
     <string name="DATOCURIOSO">Entrenar fuerza acelera tu metabolismo hasta 72 horas después</string>
     <string name="PERFILPANTALLAINICIO">PERFIL</string>
+    <string name="GALERIAPANTALLAINICIO">GALERIA</string>
+    <string name="SUBE_TU_FOTO">SUBE TU FOTO</string>
+
     <string name="HISTORIAL">HISTORIAL</string>
     <string name="PREDETERMINADOS">EJERCICIOS PREDETERMINADOS</string>
     <string name="FECHA">FECHA</string>
@@ -62,7 +65,6 @@
     <string name="btn_Actualizar">Actualizar</string>
 
 
-
     <string name="etTituloVideo">Titulo del video</string>
     <string name="btnSelectVideo">Seleccionar video</string>
     <string name="btnSubirVideo">Subir video</string>
@@ -70,5 +72,8 @@
     <string name="tvTituloVideo">Titulo del video</string>
     <string name="tvAutorVideo">Autor del video</string>
     <string name="tvFechaSubida">dd/MM/yyyy hh:mm</string>
+
+    <string name="tomar_foto">Subir Foto</string>
+    <string name="seleccionar_foto">Galeria</string>
 
 </resources>
