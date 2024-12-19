@@ -6,10 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityPantallaInicio">
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
+        android:id="@+id/viewPager2">
+    </androidx.viewpager2.widget.ViewPager2>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/fondo">
+        android:background="@color/black">
         <TextView
             android:id="@+id/comienzaPantallaInicio"
             android:layout_width="300dp"
@@ -209,7 +216,7 @@
                     android:id="@+id/datoCurioso"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/DATOCURIOSO"
+                    android:text="@string/DATOCURISO"
                     android:textSize="15sp"
                     android:fontFamily="@font/lato_bold"
                     android:textColor="@color/black"

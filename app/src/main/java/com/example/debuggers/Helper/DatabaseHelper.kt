@@ -13,7 +13,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
 
     companion object{
         private const val DATABASE_NAME = "gimnasio.db"
-        private const val DATABASE_VERSION = 6
+        private const val DATABASE_VERSION = 8
 
         const val TABLE_NAME1 = "musculos"
         const val ID_MUSCULO = "id"
@@ -82,12 +82,12 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(context,DATABASE_NAME, n
 
         val musculos = listOf("Biceps", "Triceps","Cuadriceps", "Espalda", "Femoral", "Pecho")
         val ejercicios = listOf(
-            Quintuple(1,1, "Crossover bicep polea", "sun","imagen_crossover_de_biceps"),
-            Quintuple(2,1, "Curl barra", "sun","imagen_curl_barra"),
-            Quintuple(3,1, "Curl concentrado", "curl_concentrado.mp4","imagen_curl_concentrado"),
-            Quintuple(4,1, "Curl inverso", "curl_inverso.mp4","imagen_curl_inverso"),
-            Quintuple(5,1, "Curl martillo", "curl_martillo.mp4","imagen_curl_martillo"),
-            Quintuple(6,1, "Curl predicador", "curl_predicador.mp4","imagen_curl_predicador"),
+            Quintuple(1,1, "Crossover bicep polea", "crossover_bicep_polea","imagen_crossover_de_biceps"),
+            Quintuple(2,1, "Curl barra", "curl_barra","imagen_curl_barra"),
+            Quintuple(3,1, "Curl concentrado", "curl_concentrado","imagen_curl_concentrado"),
+            Quintuple(4,1, "Curl inverso", "curl_inverso","imagen_curl_inverso"),
+            Quintuple(5,1, "Curl martillo", "curl_martillo","imagen_curl_martillo"),
+            Quintuple(6,1, "Curl predicador", "curl_predicador","imagen_curl_predicador"),
             Quintuple(7,2, "Copa con mancuernas", "hamster.gif","imagen_copa_con_mancuerna"),
             Quintuple(8,2, "Fondos en paralelas", "hamster.gif","imagen_fondos_en_paralelas"),
             Quintuple(9,2, "Overhead tricep extension", "crossover_bicep_polea.mp4","imagen_overhead_tricep_extension"),

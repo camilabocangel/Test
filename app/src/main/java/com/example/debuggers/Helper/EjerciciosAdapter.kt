@@ -42,8 +42,7 @@ class EjerciciosAdapter(
         if (resourceId != 0) {
             holder.imagenEjercicio.setImageResource(resourceId)
             Glide.with(context)
-                .load(resourceId)
-                .transform(CircleCrop())
+                .load(resourceId).centerCrop()
                 .into(holder.imagenEjercicio)
         } else {
 

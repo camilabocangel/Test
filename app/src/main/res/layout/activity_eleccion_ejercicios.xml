@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/fondo"
+        android:background="@color/black"
         android:weightSum="3"
         android:orientation="vertical">
         <LinearLayout
@@ -33,8 +33,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/ELECCIONEJERCICIOS"
                 android:textColor="@color/verde"
-                android:textSize="35sp"
-                android:fontFamily="@font/lato_regular"
+                android:textSize="30sp"
+                android:fontFamily="@font/lato_bold"
                 app:layout_constraintTop_toBottomOf="@id/botonAtrasAEleccionMusculo"
                 app:layout_constraintStart_toStartOf="@id/botonAtrasAEleccionMusculo"
                 android:layout_marginTop="30dp" />

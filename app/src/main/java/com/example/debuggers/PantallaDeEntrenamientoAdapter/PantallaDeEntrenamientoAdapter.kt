@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.debuggers.R
 import com.example.debuggers.model.Ejercicio
+import kotlin.math.round
 
 class PantallaDeEntrenamientoAdapter(private val context: Context,
                                      private val listaEjercicios:List<Ejercicio>,
@@ -35,8 +37,8 @@ class PantallaDeEntrenamientoAdapter(private val context: Context,
         val resourceId = context.resources.getIdentifier(ejercicio.gif, "drawable", context.packageName)
         if (resourceId != 0) {
             Glide.with(context)
-            .asGif() // Indica que quieres cargar un GIF
-            .load(resourceId) // Aquí puedes usar un nombre de recurso o una URL
+            .asGif()
+            .load(resourceId).centerCrop()
             .into(holder.gifEjercicio)
         }
 

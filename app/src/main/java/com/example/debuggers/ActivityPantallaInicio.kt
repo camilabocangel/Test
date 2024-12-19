@@ -2,16 +2,25 @@ package com.example.debuggers
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
+import androidx.viewpager2.widget.ViewPager2
+import com.example.debuggers.PantallaDeEntrenamientoAdapter.viewpageAdapter
 import com.example.debuggers.databinding.ActivityPantallaInicioBinding
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.io.IOException
 import java.util.Random;
+import kotlin.math.abs
 
 class ActivityPantallaInicio : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityPantallaInicioBinding
 
@@ -20,6 +29,7 @@ class ActivityPantallaInicio : AppCompatActivity() {
         binding = ActivityPantallaInicioBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+
 
         binding.datoCurioso.text = try {
             obtenerDatoCurioso()
@@ -56,6 +66,7 @@ class ActivityPantallaInicio : AppCompatActivity() {
         }
 
     }
+
 
     private fun obtenerDatoCurioso(): String {
         val inputStream = resources.openRawResource(R.raw.datos_curiosos)

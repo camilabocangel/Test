@@ -8,9 +8,10 @@
     tools:context=".ActivityEleccionMusculos">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conselecmusc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/fondo">
+        android:background="@color/black">
 
         <ImageView
             android:id="@+id/botonAtrasARegistro"
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/lato_regular"
+            android:fontFamily="@font/lato_bold"
             android:text="@string/QUEENTRENARASMUSCULO"
             android:textColor="@color/verde"
             android:textSize="35sp"
@@ -37,22 +38,19 @@
             app:layout_constraintTop_toBottomOf="@id/botonAtrasARegistro">
 
         </TextView>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/list_musculos"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="20dp"
-                android:padding="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/siguienteAElecEjercicios"
-                app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
-                app:layout_constraintVertical_bias="0.0"
-                tools:listitem="@layout/check_musculo" >
-            </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_musculos"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="@id/conselecmusc"
+            app:layout_constraintStart_toStartOf="@id/conselecmusc"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/siguienteAElecEjercicios"
+            app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
+            tools:listitem="@layout/check_musculo">
+        </androidx.recyclerview.widget.RecyclerView>
 
         <Button
             android:id="@+id/siguienteAElecEjercicios"
@@ -65,9 +63,9 @@
             android:textColor="@color/black"
             android:layout_marginBottom="20dp"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30sp">
 
         </Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
