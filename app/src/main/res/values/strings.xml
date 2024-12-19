@@ -59,8 +59,14 @@
     <string name="PERFILPANTALLAINICIO">PERFIL</string>
     <string name="GALERIAPANTALLAINICIO">GALERIA</string>
     <string name="SUBE_TU_FOTO">SUBE TU FOTO</string>
-
     <string name="HISTORIAL">HISTORIAL</string>
+    <string name="PERSONALIZAICONO">PERSONALIZA</string>
+    <string name="PREDETERMINADASICONO">PREDETERMINADAS</string>
+    <string name="VIDEOICONO">VIDEOS</string>
+    <string name="GALERIABANNER">MIDE TU PROGRESO</string>
+    <string name="MIDETUPROGRESO">Accede a nuestra gelería y comienza a sacarte fotos</string>
+
+
     <string name="PREDETERMINADOS">EJERCICIOS PREDETERMINADOS</string>
     <string name="FECHA">FECHA</string>
     <string name="MUSCULOS">MUSCULOS</string>

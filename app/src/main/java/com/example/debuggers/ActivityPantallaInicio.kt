@@ -38,29 +38,27 @@ class ActivityPantallaInicio : AppCompatActivity() {
             "Error al cargar el dato."
         }
 
-        val cardView2 = findViewById<CardView>(R.id.cardviewPersonalizaRutina)
 
-        cardView2.setOnClickListener {
-            val intentEleccionMusculos = Intent (applicationContext, ActivityEleccionMusculos::class.java)
+        binding.cardviewPersonalizaRutina.setOnClickListener {
+            val intentEleccionMusculos = Intent (this, ActivityEleccionMusculos::class.java)
             startActivity(intentEleccionMusculos)
         }
 
-        val cardView1 = findViewById<CardView>(R.id.cardviewSinTiempo)
-
-        cardView1.setOnClickListener {
-            val intentEjerciciosPredeterminados = Intent (applicationContext, ActivityEjerciciosPredeterminados::class.java)
+        binding.cardviewRutinaPredeterminada.setOnClickListener {
+            val intentEjerciciosPredeterminados = Intent (this, ActivityEjerciciosPredeterminados::class.java)
             startActivity(intentEjerciciosPredeterminados)
         }
 
-        binding.iconoPerfilPantallaInicio.setOnClickListener {
+
+        binding.cardviewPerfilPantallaInicial.setOnClickListener {
             val intentPerfilUsuario = Intent (this, ActivityUserPerfil::class.java)
             startActivity(intentPerfilUsuario)
         }
-        binding.iconoHistorialPantallaInicio.setOnClickListener {
+        binding.cardviewHistorialPantallaInicio.setOnClickListener {
             val intentHistorial = Intent (this, ActivityHistorial::class.java)
             startActivity(intentHistorial)
         }
-        binding.cardviewVideos.setOnClickListener {
+        binding.cardviewVideoPantallaInicio.setOnClickListener {
             val intentPantallaVideos = Intent (this, ActivityPantallaVideos::class.java)
             startActivity(intentPantallaVideos)
         }
