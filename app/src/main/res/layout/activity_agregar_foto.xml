@@ -8,6 +8,18 @@
     android:background="@drawable/fondo_login"
     tools:context=".ActivityAgregarFoto">
 
+
+    <ImageView
+        android:id="@+id/IbRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_regresar"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/text_titulo_subirfoto"
         android:text="@string/SUBE_TU_FOTO"

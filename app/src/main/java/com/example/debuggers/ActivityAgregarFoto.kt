@@ -50,6 +50,10 @@ class ActivityAgregarFoto : AppCompatActivity() {
         binding.buttonTomarFotoCamara.setOnClickListener {
             tomarFoto()
         }
+
+        binding.IbRegresar.setOnClickListener{
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun seleccionarFoto() {
