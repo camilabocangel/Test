@@ -40,6 +40,10 @@ class ActivityGaleriaFotos : AppCompatActivity() {
             val intentAgregarFoto = Intent(this, ActivityAgregarFoto::class.java)
             startActivity(intentAgregarFoto)
         }
+
+        binding.IbRegresar.setOnClickListener{
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun configurarSpinners() {
